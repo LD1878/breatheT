@@ -673,17 +673,13 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-       AUDIENCE PATHS
+       SITUATION DOORS (id="paths" kept for old links)
   ════════════════════════════════════════════════════════ -->
-    <section id="paths" class="paths-section">
+    <section id="paths" class="paths-section" aria-labelledby="paths-heading">
         <div class="container">
             <div class="paths-header reveal">
-                <span class="eyebrow" style="color: white;">ABOUT YOU </span>
-                <h2>Tailored support <br>
-                    for every enquiry </h2>
-                <p class="paths-intro">Select your profile to access the right starting
-                    point. Each path is different but every outcome is the same: a better, healthier, more efficient
-                    building.</p>
+                <span class="eyebrow" style="color: white;">YOUR SITUATION</span>
+                <h2 id="paths-heading">Start with the building</h2>
             </div>
 
             <div class="paths-cards">
@@ -692,58 +688,76 @@
                     <div class="path-icon" aria-hidden="true">
                         <i class="ph ph-house-line"></i>
                     </div>
-                    <h3>Owners</h3>
-                    <p class="path-intro-text">Future-proof your heritage building. Reduce energy bills and eliminate
-                        damp
-                        without compromising the character or fabric of the construction.</p>
-                    <ul class="path-features">
-                        <li>Free property assessment included</li>
-                        <li><!-- confirm claim basis with BreatheTherm -->65% average reduction in heat loss</li>
-                        <li>Healthier, mould-free living</li>
-                        <li>Grant funding guidance</li>
-                        <li>UK-wide approved installer network</li>
-                    </ul>
-                    <button class="btn btn-terra btn-arrow path-trigger" data-modal="homeowner">Book free
-                        assessment</button>
+                    <h3>Cold solid wall?</h3>
+                    <p class="path-intro-text">Solid brick or stone with no cavity gets cold on the inside face, and that is where the condensation and mould start. A thin breathable lining warms the surface and lets the wall dry.</p>
+                    <a href="#situation-wall" class="btn btn-terra btn-arrow">See what suits a solid wall</a>
                 </div>
 
                 <div class="path-card path-green reveal d1">
                     <div class="path-accent-bar"></div>
                     <div class="path-icon" aria-hidden="true">
-                        <i class="ph ph-hard-hat"></i>
+                        <i class="ph ph-stairs"></i>
                     </div>
-                    <h3>Architects &amp; Conservation Officers</h3>
-                    <p class="path-intro-text">Specification-ready systems for the most sensitive buildings. Full
-                        technical support from design stage to site sign-off and LPA approval.</p>
-                    <ul class="path-features">
-                        <li>WTA-compliant breathable system</li>
-                        <li>Hygrothermal modelling service</li>
-                        <li>BIM objects &amp; full CAD detail library</li>
-                        <li>Conservation area approval record</li>
-                        <li>RIBA-accredited CPD available</li>
-                    </ul>
-                    <button class="btn btn-terra btn-arrow path-trigger" data-modal="architect">Get the technical
-                        pack</button>
+                    <h3>Cold or rotten suspended floor?</h3>
+                    <p class="path-intro-text">Boards over a ventilated void are a draught from outside. Breathable insulation between the joists stops the draught without stopping the ventilation the timbers need.</p>
+                    <a href="#situation-floor" class="btn btn-terra btn-arrow">See what suits a suspended floor</a>
                 </div>
 
                 <div class="path-card path-navy reveal d2">
                     <div class="path-accent-bar"></div>
                     <div class="path-icon" aria-hidden="true">
-                        <i class="ph ph-wrench"></i>
+                        <i class="ph ph-bank"></i>
                     </div>
-                    <h3>Installers &amp; Contractors</h3>
-                    <p class="path-intro-text">Join the approved installer network and tap into the UK's 5.9 million
-                        pre-1919 buildings waiting to be retrofitted properly. First in your area.</p>
-                    <ul class="path-features">
-                        <li>Full 2-day system installation training</li>
-                        <li>Dedicated technical support line</li>
-                        <li>Trade pricing from day one</li>
-                        <li>Lead generation &amp; project referrals</li>
-                        <li>Marketing &amp; specification support</li>
-                    </ul>
-                    <button class="btn btn-terra btn-arrow path-trigger" data-modal="installer">Become
-                        certified</button>
+                    <h3>Listed or in a conservation area?</h3>
+                    <p class="path-intro-text">Slim, reversible, mineral build-ups that a conservation officer can read. Grade I precedent included.</p>
+                    <a href="#situation-listed" class="btn btn-terra btn-arrow">See what suits a listed building</a>
+                    <a href="#architects" class="path-quiet-link">I'm the architect or conservation officer</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="situation-wall" class="challenge-section" aria-labelledby="sit-wall-title">
+        <div class="container situation-copy">
+            <span class="eyebrow">SOLID WALLS</span>
+            <h2 id="sit-wall-title">A cold inside face on solid brick or stone</h2>
+            <p>Solid brick and stone walls were built with lime mortar so they can take in moisture and let it go again. A modern board with a vapour barrier stops that cycle. Moisture then condenses inside the wall, where you cannot see it, and the historic fabric starts to decay.</p>
+            <p>A wet wall also loses more heat. Wet masonry can conduct heat up to three times faster than dry masonry, so insulation that causes damp can make the house colder over time.</p>
+            <p>The cold inside face is where mould starts. A thin breathable lining warms that surface and still lets the wall dry. Build-ups can be as little as 25mm, so window reveals and room proportions stay as they are.</p>
+            <p>This is the situation of most of the UK's 5.9 million pre-1919 buildings: no cavity, a cold internal face, and a finish that may be trapping moisture rather than managing it. A survey sets the thickness. The aim is a wall that is warm to the touch and dry in the body of the masonry.</p>
+            <div class="hero-ctas">
+                <a href="/will-it-work" class="btn btn-terra btn-arrow">Will it work on my house?</a>
+                <a href="#contact" class="btn btn-primary btn-arrow">Book a free assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="situation-floor" class="explorer-section" aria-labelledby="sit-floor-title">
+        <div class="container situation-copy">
+            <span class="eyebrow">SUSPENDED FLOORS</span>
+            <h2 id="sit-floor-title">Boards over a ventilated void</h2>
+            <p>A suspended timber floor is a set of boards over a ventilated void. That void is open to outside air, so the floor is a draught as well as a heat loss. The timbers still need that ventilation. Blocking it, or wrapping the void in vapour-closed insulation, is how floors start to rot.</p>
+            <p>Breathable insulation between the joists stops the draught without stopping the air the timbers need. On a solid or mixed floor the same mineral logic applies: a vapour-permeable separator, an insulating mineral base, and a breathable screed or finish, with no impermeable membrane.</p>
+            <p>The floor system already on this site uses PerliMat as a vapour-open geotextile separator, PerliBase as a mineral insulating underbase, and PerliStruct or PerliScreed where a structural or finished floor is required. Thicknesses are set by the survey.</p>
+            <p>If the floor is flagstones on earth, or a mix of constructions, the rule does not change: keep the assembly vapour-open, keep the structure dry, and warm the room side.</p>
+            <div class="hero-ctas">
+                <a href="/will-it-work" class="btn btn-terra btn-arrow">Will it work on my house?</a>
+                <a href="#contact" class="btn btn-primary btn-arrow">Book a free assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="situation-listed" class="challenge-section" aria-labelledby="sit-listed-title">
+        <div class="container situation-copy">
+            <span class="eyebrow">LISTED AND CONSERVATION</span>
+            <h2 id="sit-listed-title">A build-up a conservation officer can read</h2>
+            <p>Listed buildings and conservation areas need a build-up a conservation officer can read: mineral, vapour-open, slim and reversible. All of the materials are mineral and designed to work with traditional construction, which is why they generally align with conservation principles.</p>
+            <p>Because the insulation is applied internally, the external appearance is unchanged, so conservation area restrictions on external alterations typically do not apply. If the building is listed, Listed Building Consent is still required for works that affect its character. Hygrothermal modelling reports are produced to support those applications.</p>
+            <p>The system has been used on Grade I, Grade II* and Grade II buildings. A Grade I farmhouse of solid stone, cob and original lime plaster was insulated to a U-value of 0.22 while meeting Historic England's strictest requirements. Internal build-ups can be as little as 25mm, so reveals and proportions are not rebuilt.</p>
+            <p>WTA Merkblatt 6-4 is the technical standard this approach is built to.</p>
+            <div class="hero-ctas">
+                <a href="/will-it-work" class="btn btn-terra btn-arrow">Will it work on my house?</a>
+                <a href="#contact" class="btn btn-primary btn-arrow">Book a free assessment</a>
             </div>
         </div>
     </section>
@@ -1251,47 +1265,7 @@
                 </div>
 
                 <div class="reveal d1">
-                    <div>
-                        <div class="path-card path-terra reveal">
-                            <div class="path-accent-bar"></div>
-
-                            <h3>Owners</h3>
-                            <p class="path-intro-text">Future-proof your heritage home. Reduce energy bills and
-                                eliminate damp
-                                without compromising the character or fabric of your building.</p>
-
-                            <button class="btn btn-terra btn-arrow path-trigger" data-modal="homeowner"
-                                style="width: 70%">Book free
-                                assessment</button>
-                        </div>
-
-                        <div class="path-card path-green reveal d1">
-                            <div class="path-accent-bar"></div>
-
-                            <h3>Architects &amp; Conservation Officers</h3>
-                            <p class="path-intro-text">Specification-ready systems for the most sensitive buildings.
-                                Full
-                                technical support from design stage to site sign-off and LPA approval.</p>
-
-                            <button class="btn btn-terra btn-arrow path-trigger" data-modal="architect"
-                                style="width: 70%">Get the
-                                technical
-                                pack</button>
-                        </div>
-
-                        <div class="path-card path-navy reveal d2">
-                            <div class="path-accent-bar"></div>
-
-                            <h3>Installers &amp; Contractors</h3>
-                            <p class="path-intro-text">Join the approved installer network and tap into the UK's 5.9
-                                million
-                                pre-1919 buildings waiting to be retrofitted properly. First in your area.</p>
-
-                            <button class="btn btn-terra btn-arrow path-trigger" data-modal="installer"
-                                style="width: 70%">Become
-                                certified</button>
-                        </div>
-                    </div>
+                    <button class="btn btn-terra btn-arrow path-trigger" data-modal="homeowner">Book free assessment</button>
 
                     <div class="form-success" id="formSuccess">
                         <div class="form-success-icon">✓</div>
@@ -1413,8 +1387,8 @@
             <div class="footer-col">
                 <h5>For You</h5>
                 <a href="#paths">Homeowners</a>
-                <a href="#paths">Architects</a>
-                <a href="#paths">Installers</a>
+                <a href="#architects">Architects</a>
+                <a href="/installers">Installers</a>
                 <a href="#contact">Book Assessment</a>
                 <a href="#grants">Grants &amp; Funding</a>
             </div>
