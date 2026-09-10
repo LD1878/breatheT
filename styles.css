@@ -1141,6 +1141,8 @@ body.inner-page #main-nav {
   border: 1px solid var(--stone-100);
   box-shadow: var(--sh-sm);
   transition: all 0.3s var(--ease);
+  color: inherit;
+  display: block;
 }
 .case-card:hover { box-shadow: var(--sh-lg); transform: translateY(-4px); }
 
