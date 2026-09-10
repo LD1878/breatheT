@@ -247,15 +247,18 @@
 
   /* Legend item clicks */
   qsa('.legend-item').forEach(item => {
-    item.addEventListener('click', () => {
+    const activateLegend = () => {
       qsa('.legend-item').forEach(i => i.classList.remove('lactive'));
       item.classList.add('lactive');
       const id = item.dataset.layer;
       showLayer(id);
-      /* Mirror highlight on SVG */
       if (activeHs) activeHs.classList.remove('hactive');
       activeHs = qs(`.hs-group[data-id="${id}"]`);
       if (activeHs) activeHs.classList.add('hactive');
+    };
+    item.addEventListener('click', activateLegend);
+    item.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateLegend(); }
     });
   });
 
@@ -326,12 +329,26 @@
       e.preventDefault();
       let valid = true;
       qsa('[required]', this).forEach(field => {
-        if (!field.value.trim()) {
-          field.style.borderColor = '#e05252';
-          field.addEventListener('input', () => field.style.borderColor = '', { once: true });
+        const group = field.closest('.form-group') || field.parentNode;
+        let err = group.querySelector('.form-error');
+        const empty = !field.value.trim() && field.type !== 'checkbox' ? true : (field.type === 'checkbox' && !field.checked);
+        if (field.type !== 'checkbox' && !field.value.trim()) {
+          field.style.borderColor = '#C0392B';
+          if (!err) {
+            err = document.createElement('span');
+            err.className = 'form-error';
+            err.setAttribute('role', 'alert');
+            err.textContent = 'This field is required.';
+            group.appendChild(err);
+          }
+          field.addEventListener('input', () => {
+            field.style.borderColor = '';
+            if (err) err.remove();
+          }, { once: true });
           valid = false;
-        } else {
+        } else if (field.type !== 'checkbox') {
           field.style.borderColor = '';
+          if (err) err.remove();
         }
       });
       if (!valid) return;
