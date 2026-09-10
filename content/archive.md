@@ -45,3 +45,34 @@ Join the approved installer network and tap into the UK's 5.9 million pre-1919 b
 - Marketing and specification support
 
 Button: Become certified (opened the installer modal)
+
+## Six benefit tiles (removed from homepage, Step 8)
+
+These sat in the right-hand column of "How breathable insulation works".
+
+- Energy efficiency: Reduce heating demand, cut emissions and improve energy ratings.
+- Breathability: Prevent moisture build-up and condensation by enabling vapour to migrate through the building fabric.
+- Heritage friendly: Maintain the appearance and integrity of historic homes.
+- Sustainability: Support net zero goals by improving existing homes and avoiding demolition.
+- Compatibility: System components work with both breathable and non-breathable materials for mixed/phased retrofits.
+- Comfort and well-being: Promote better air quality, more stable temperatures and a healthier home environment.
+
+Icons: icon-energy-efficiency.png, icon-breathability.png, icon-heritage.png, icon-sustainability.png, icon-compatibility.png, icon-comfort.png.
+
+## Comparison table header and callout (table itself moved to #situation-wall)
+
+Eyebrow: Retrofit without regret.
+
+Heading: Invest in BreatheTherm. Enjoy the savings for years.
+
+The cheapest insulation is not always the lowest cost option. In traditional buildings, moisture risk, failed detailing and fabric damage can turn a quick fix into an expensive problem.
+
+Callout: BreatheTherm is designed to keep heat in, let moisture out, and protect the building for the long term.
+
+## Pre-footer profile cards
+
+Removed in Step 4. See profile cards above.
+
+## Extra Book assessment buttons
+
+Removed from the projects strip ("Discuss your project") and the FAQ aside ("Book an assessment"). Kept: nav, end of each situation section, contact section.
