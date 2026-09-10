@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            var path = location.pathname.replace(/\/+$/, '');
+            var map = {
+                '/breatheT/will-it-work': '/breatheT/will-it-work/',
+                '/breatheT/privacy': '/breatheT/privacy/',
+                '/breatheT/installers': '/breatheT/installers/',
+                '/breatheT/projects/bristol-mansion-block': '/breatheT/projects/bristol-mansion-block/'
+            };
+            if (map[path]) location.replace(map[path]);
+        })();
+    </script>
+</head>
+<body class="inner-page">
+    <main class="page-main" id="main">
+        <div class="container">
+            <h1>That page is not here</h1>
+            <p>Try the home page or the house quiz.</p>
+            <p><a href="./">Home</a> · <a href="will-it-work/">Will it work on my house?</a></p>
+        </div>
+    </main>
+</body>
+</html>
