@@ -49,8 +49,8 @@ Untouched passing pairs (nav ink-mid on white, primary buttons, footer cream-mid
 
 ## Lighthouse accessibility
 
-Chrome/Lighthouse was not run against the live production URL in this pass as a before score. After the Step 9 changes, a local Lighthouse run should be recorded in Step 10 QA. Expected movement: colour-contrast, heading-order, skip-link, target-size, and aria-command-name on the Layer Guide.
+This environment has no Chrome/Chromium, so Lighthouse could not be executed here.
 
-Before (from Step 0 audit, not a Lighthouse number): multiple 1.9:1 buttons, missing skip link, heading skips, hover-only legend, emoji in lists.
+Before (Step 0 audit, not a Lighthouse score): colour-contrast failures on the main buttons (1.98:1), missing skip link, heading skips (h2 to h4), hover-only legend, emoji in lists, missing alt on project photos.
 
-After: contrast pairs above all pass their threshold; skip link present; heading order corrected on the homepage.
+After: contrast pairs in the table above all pass their threshold; skip link present; heading order corrected on the homepage; Layer Guide labels match the visible names and respond to Enter/Space. A Lighthouse accessibility score should be captured in Chrome DevTools against the local server (`python3 -m http.server 8080`) when a browser is available.

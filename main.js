@@ -1,5 +1,5 @@
 /**
- * BreatheTherm — main.js
+ * BreatheTherm: main.js
  * 1. Navigation (scroll reveal + hamburger)
  * 2. Scroll-triggered reveals + hero entrance
  * 3. Stat counter animation
@@ -58,7 +58,7 @@
 
   qsa('.reveal').forEach(el => revealObs.observe(el));
 
-  /* Hero entrance — stagger each child slightly */
+  /* Hero entrance: stagger each child slightly */
   requestAnimationFrame(() =>
     setTimeout(() => {
       qsa('.reveal-hero').forEach((el, i) =>
@@ -125,7 +125,7 @@
     W2: {
       id: 'W2',
       title: 'PerliTherm',
-      desc: 'Mineral breathable wall base insulation providing excellent vapour management alongside thermal performance. The core of the BreatheTherm wall system — expanded perlite bound with hydraulic lime.',
+      desc: 'Mineral breathable wall base insulation providing excellent vapour management alongside thermal performance. The core of the BreatheTherm wall system: expanded perlite bound with hydraulic lime.',
       thick: '50mm',
       lambda: '0.064 W/m·K',
       sd: '0.2 – 0.4 m',
@@ -143,7 +143,7 @@
     W4: {
       id: 'W4',
       title: 'Aerogel Layer',
-      desc: 'Ultra-thin silica aerogel blanket for thermally constrained retrofits where build depth is at a premium — window reveals, recessed frames, and tight junctions. Highest thermal resistance per mm available.',
+      desc: 'Ultra-thin silica aerogel blanket for thermally constrained retrofits where build depth is at a premium: window reveals, recessed frames, and tight junctions. Highest thermal resistance per mm available.',
       thick: '10mm',
       lambda: '0.017 W/m·K',
       sd: '0.04 – 0.08 m',
@@ -154,7 +154,7 @@
       title: 'Perlifinish',
       desc: 'Traditional breathable lime finish coat. Fully compatible with historic masonry and allows the wall to manage vapour freely.',
       thick: '20mm',
-      lambda: '—',
+      lambda: '-',
       sd: '0.10 – 0.20 m',
       price: '£6.60 /m²'
     },
@@ -197,7 +197,7 @@
     F5: {
       id: 'F5',
       title: 'Aerogel',
-      desc: 'Ultra-thin silica aerogel blanket for thermally constrained retrofits where build depth is at a premium — window reveals, recessed frames, and tight junctions. Highest thermal resistance per mm available.',
+      desc: 'Ultra-thin silica aerogel blanket for thermally constrained retrofits where build depth is at a premium: window reveals, recessed frames, and tight junctions. Highest thermal resistance per mm available.',
       thick: '5mm',
       lambda: '0.017 W/m·K',
       sd: '0.04 – 0.08 m',
@@ -375,6 +375,6 @@
   /* ─────────────────────────────────────────────────────────
      INIT COMPLETE
   ───────────────────────────────────────────────────────── */
-  console.log('BreatheTherm — initialised ✓');
+  console.log('BreatheTherm initialised');
 
 })();
