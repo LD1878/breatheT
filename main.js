@@ -320,47 +320,27 @@
   /* ─────────────────────────────────────────────────────────
      7. LEAD CAPTURE FORM
   ───────────────────────────────────────────────────────── */
-  const form    = qs('#leadForm');
-  const success = qs('#formSuccess');
-
-  form?.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    /* Basic required field validation */
-    let valid = true;
-    qsa('[required]', this).forEach(field => {
-      if (!field.value.trim()) {
-        field.style.borderColor = '#e05252';
-        field.addEventListener('input', () => field.style.borderColor = '', { once: true });
-        valid = false;
-      } else {
-        field.style.borderColor = '';
-      }
+  function bindLeadForm(form, success) {
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let valid = true;
+      qsa('[required]', this).forEach(field => {
+        if (!field.value.trim()) {
+          field.style.borderColor = '#e05252';
+          field.addEventListener('input', () => field.style.borderColor = '', { once: true });
+          valid = false;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      if (!valid) return;
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
     });
-    if (!valid) return;
-
-    /*
-     * TODO: Wire up to your form endpoint.
-     * Options: Formspree, Netlify Forms, custom PHP mailer, HubSpot, etc.
-     *
-     * Example with Formspree:
-     *   fetch('https://formspree.io/f/YOUR_FORM_ID', {
-     *     method: 'POST',
-     *     body: new FormData(this),
-     *     headers: { 'Accept': 'application/json' }
-     *   }).then(r => r.ok ? showSuccess() : alert('Something went wrong.'));
-     *
-     * For now we show the success state immediately:
-     */
-    showFormSuccess();
-  });
-
-  function showFormSuccess() {
-    if (form && success) {
-      form.style.display    = 'none';
-      success.style.display = 'block';
-    }
   }
+  bindLeadForm(qs('#leadForm'), qs('#formSuccess'));
+  bindLeadForm(qs('#techPackForm'), qs('#techPackSuccess'));
 
   /* ─────────────────────────────────────────────────────────
      8. SMOOTH ANCHOR SCROLLING (with nav offset)
