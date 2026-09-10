@@ -247,6 +247,17 @@ em { font-style: italic; }
   background: rgba(255,255,255,0.97);
 }
 #main-nav.nav-visible { opacity: 1; transform: none; pointer-events: all; }
+body.inner-page #main-nav {
+  opacity: 1;
+  transform: none;
+  pointer-events: all;
+}
+
+.page-main {
+  padding-top: calc(var(--nav-h) + 48px);
+  padding-bottom: 80px;
+}
+.page-main .container { max-width: 720px; }
 #main-nav.nav-scrolled {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -327,7 +338,7 @@ em { font-style: italic; }
 
   overflow: hidden;
 
-  background-image: url("assets/images/BT-hero-bkg.jpg") ;
+  background-image: url("assets/images/london-stock-brick-terrace.jpg") ;
   
   background-size: cover ;
   background-position: left;
