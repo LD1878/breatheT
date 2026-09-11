@@ -26,8 +26,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=assess">
 
     <script type="application/ld+json">
     {
@@ -149,7 +149,7 @@
             </div>
         </section>
 
-        <section id="problem" class="band band-plaster grain" aria-labelledby="problem-title">
+        <section id="problem" class="band band-wash grain" aria-labelledby="problem-title">
             <div class="container problem-layout">
                 <div class="problem-intro">
                     <p class="eyebrow">The problem</p>
@@ -229,7 +229,7 @@
             </div>
         </section>
 
-        <section id="explorer" class="band band-plaster grain" aria-labelledby="guide-title">
+        <section id="explorer" class="band band-stone grain" aria-labelledby="guide-title">
             <div class="container">
                 <div class="guide-head">
                     <p class="eyebrow">Interactive layer guide</p>
@@ -414,7 +414,7 @@
             </div>
         </section>
 
-        <section id="about" class="band band-plaster grain" aria-labelledby="about-title">
+        <section id="about" class="band band-wash grain" aria-labelledby="about-title">
             <div class="container">
                 <div class="section-lead">
                     <p class="eyebrow">About you</p>
@@ -549,7 +549,7 @@
             </div>
         </section>
 
-        <section id="team" class="band band-plaster grain" aria-labelledby="team-title">
+        <section id="team" class="band band-paper" aria-labelledby="team-title">
             <div class="container team-layout">
                 <div class="team-intro">
                     <p class="eyebrow">Meet the team</p>
@@ -578,7 +578,7 @@
             </div>
         </section>
 
-        <section id="faq" class="band band-paper" aria-labelledby="faq-title">
+        <section id="faq" class="band band-stone grain" aria-labelledby="faq-title">
             <div class="container faq-layout">
                 <div class="faq-intro">
                     <p class="eyebrow">Common questions</p>
@@ -652,30 +652,30 @@
             </div>
         </section>
 
-        <section id="contact" class="band band-charcoal grain" aria-labelledby="contact-title">
+        <section id="contact" class="band band-assess grain" aria-labelledby="contact-title">
             <div class="container contact-layout">
                 <div class="contact-copy">
-                    <p class="eyebrow">Get started</p>
-                    <h2 id="contact-title">Ready to protect your building properly?</h2>
-                    <p>Speak to a heritage retrofit specialist. No obligation. Clear advice tailored to your building type, age, and any conservation requirements. We typically respond within one working day.</p>
+                    <p class="eyebrow">Free assessment</p>
+                    <h2 id="contact-title">Book a free assessment</h2>
+                    <p>Speak to a heritage retrofit specialist. No obligation. Clear advice tailored to your building type, age, and any conservation requirements.</p>
+                    <p class="contact-phone-display"><a href="tel:01285407088">01285 407088</a></p>
                     <p class="contact-phone">
-                        <a href="tel:01285407088">01285 407088</a>
                         <a href="mailto:hello@breathetherm.co.uk">hello@breathetherm.co.uk</a>
-                        <a class="wa-quiet" href="https://wa.me/+447887591971" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        <a class="wa-quiet" href="https://wa.me/+447887591971" target="_blank" rel="noopener noreferrer">WhatsApp a specialist</a>
                     </p>
                     <ul class="trust-line">
-                        <li>Free assessment</li>
+                        <li>Callback within one working day</li>
                         <li>No hard sell</li>
                         <li>Conservation specialists</li>
                     </ul>
                 </div>
 
-                <div class="contact-form-wrap">
+                <div class="contact-form-wrap assess-card">
                     <form class="lead-form" id="leadForm" novalidate>
                         <div class="contact-step is-on" data-step="1" id="contactStep1">
                             <p class="step-label">Step 1 of 2</p>
                             <fieldset>
-                                <legend>I am</legend>
+                                <legend>Who should we prepare for?</legend>
                                 <label class="role-choice spark-cyan">
                                     <input type="radio" name="role" value="owner" required>
                                     <span>An owner</span>
@@ -689,11 +689,12 @@
                                     <span>An installer</span>
                                 </label>
                             </fieldset>
-                            <button type="button" class="btn btn-primary" id="contactNext">Continue</button>
+                            <button type="button" class="btn btn-primary btn-assess" id="contactNext">Continue</button>
                         </div>
 
                         <div class="contact-step" data-step="2" id="contactStep2" hidden>
                             <p class="step-label">Step 2 of 2 · <button type="button" class="step-back" id="contactBack">Change who I am</button></p>
+                            <p class="assess-legend">Your details</p>
                             <div class="form-group">
                                 <label for="c-name">Name</label>
                                 <input class="form-input" id="c-name" name="name" type="text" autocomplete="name" required>
@@ -712,7 +713,7 @@
                                     <input class="form-input" id="c-postcode" name="postcode" type="text" autocomplete="postal-code" required>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send enquiry</button>
+                            <button type="submit" class="btn btn-primary btn-assess">Book free assessment</button>
                             <p class="form-promise">We will call within one working day. Prefer to speak now? <a href="tel:01285407088">01285 407088</a>.</p>
                         </div>
                     </form>
