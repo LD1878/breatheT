@@ -11,8 +11,19 @@
     nav.classList.toggle('nav-visible', y > 8);
     nav.classList.toggle('nav-scrolled', y > 40);
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
+  function updateNavOnDark() {
+    if (!nav) return;
+    const box = nav.getBoundingClientRect();
+    const dark = [...document.querySelectorAll('.band-charcoal, .band-assess, footer.site-footer')].some((el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < box.bottom && r.bottom > box.top;
+    });
+    document.documentElement.classList.toggle('nav-on-dark', dark);
+  }
+  window.addEventListener('scroll', () => { updateNav(); updateNavOnDark(); }, { passive: true });
+  window.addEventListener('resize', updateNavOnDark);
   updateNav();
+  updateNavOnDark();
 
   const ham = qs('#hamburger');
   const mNav = qs('#mobile-nav');
