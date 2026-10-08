@@ -175,21 +175,21 @@
 
   const wallsPanel = qs('#build-walls');
   const floorPanel = qs('#build-floor');
-  qsa('.tab').forEach((tab) => {
+  qsa('button.tab').forEach((tab) => {
     tab.addEventListener('click', () => {
       const view = tab.dataset.view;
-      qsa('.tab').forEach((t) => {
+      qsa('button.tab').forEach((t) => {
         const on = t === tab;
         t.classList.toggle('is-on', on);
         t.setAttribute('aria-selected', String(on));
       });
-      if (view === 'floor') {
+      if (view === 'floor' && wallsPanel && floorPanel) {
         wallsPanel.hidden = true;
         wallsPanel.classList.remove('is-on');
         floorPanel.hidden = false;
         floorPanel.classList.add('is-on');
         showLayer('F2');
-      } else {
+      } else if (wallsPanel && floorPanel) {
         floorPanel.hidden = true;
         floorPanel.classList.remove('is-on');
         wallsPanel.hidden = false;
@@ -198,6 +198,7 @@
       }
     });
   });
+  if (floorPanel && !wallsPanel) showLayer('F2');
 
   const faqToggle = qs('#faqToggle');
   const faqMore = qs('#faq-more');
@@ -266,9 +267,35 @@
     if (input) input.checked = true;
   }
 
+  function rememberAudience(role) {
+    if (!role) return;
+    const field = qs('#audienceDoor');
+    if (field) field.value = role;
+    try { sessionStorage.setItem('bt-audience', role); } catch (err) { /* storage off */ }
+  }
+
+  const pagePathInput = qs('#pagePath');
+  if (pagePathInput) pagePathInput.value = window.location.pathname;
+
+  try {
+    const storedAudience = sessionStorage.getItem('bt-audience');
+    if (storedAudience) {
+      setRole(storedAudience);
+      rememberAudience(storedAudience);
+      syncRoleChoices();
+    }
+  } catch (err) { /* storage off */ }
+
+  qsa('input[name="role"]').forEach((input) => {
+    input.addEventListener('change', () => {
+      if (input.checked) rememberAudience(input.value);
+    });
+  });
+
   qsa('[data-role]').forEach((el) => {
     el.addEventListener('click', () => {
       setRole(el.dataset.role);
+      rememberAudience(el.dataset.role);
       if (el.getAttribute('href') === '#contact') goStep2();
     });
   });
@@ -310,6 +337,8 @@
         }
       });
       if (!valid) return;
+      const picked = selectedRole();
+      if (picked) rememberAudience(picked.value);
       f.hidden = true;
       if (ok) {
         ok.hidden = false;

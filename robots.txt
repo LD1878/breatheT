@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ld1878.github.io/breatheT/sitemap.xml

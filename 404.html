@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page not found</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=warm">
     <script>
         (function () {
             var path = location.pathname.replace(/\/+$/, '');
@@ -12,13 +14,91 @@
                 '/breatheT/will-it-work': '/breatheT/will-it-work/',
                 '/breatheT/privacy': '/breatheT/privacy/',
                 '/breatheT/installers': '/breatheT/installers/',
-                '/breatheT/projects/bristol-mansion-block': '/breatheT/projects/bristol-mansion-block/'
+                '/breatheT/projects/bristol-mansion-block': '/breatheT/projects/bristol-mansion-block/',
+                '/breatheT/solutions': '/breatheT/solutions/',
+                '/breatheT/solutions/internal-walls': '/breatheT/solutions/internal-walls/',
+                '/breatheT/solutions/external-walls': '/breatheT/solutions/external-walls/',
+                '/breatheT/solutions/floors': '/breatheT/solutions/floors/',
+                '/breatheT/products': '/breatheT/products/',
+                '/breatheT/products/perlitherm': '/breatheT/products/perlitherm/',
+                '/breatheT/products/gelpanel': '/breatheT/products/gelpanel/',
+                '/breatheT/products/perliscatch': '/breatheT/products/perliscatch/',
+                '/breatheT/products/perlimessh': '/breatheT/products/perlimessh/',
+                '/breatheT/products/aerobond': '/breatheT/products/aerobond/',
+                '/breatheT/products/perlifinish': '/breatheT/products/perlifinish/',
+                '/breatheT/products/perlibase': '/breatheT/products/perlibase/',
+                '/breatheT/products/perlistruct': '/breatheT/products/perlistruct/',
+                '/breatheT/products/perlilay': '/breatheT/products/perlilay/',
+                '/breatheT/products/perlimat': '/breatheT/products/perlimat/',
+                '/breatheT/projects': '/breatheT/projects/',
+                '/breatheT/projects/kerry-cottage': '/breatheT/projects/kerry-cottage/',
+                '/breatheT/display': '/breatheT/display/',
+                '/breatheT/guides': '/breatheT/guides/',
+                '/breatheT/for-homeowners': '/breatheT/for-homeowners/',
+                '/breatheT/for-architects': '/breatheT/for-architects/',
+                '/breatheT/for-installers': '/breatheT/for-installers/',
+                '/breatheT/about': '/breatheT/about/',
+                '/breatheT/contact': '/breatheT/contact/',
             };
             if (map[path]) location.replace(map[path]);
         })();
     </script>
 </head>
 <body class="inner-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header id="main-nav">
+        <div class="container nav-content">
+            <a class="nav-logo" href="./">
+                <img src="./assets/images/breathetherm-logo.png" alt="BreatheTherm">
+            </a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="./solutions/#problem">The Problem</a>
+                <a href="./solutions/#approach">The System</a>
+                <a href="./solutions/internal-walls/">Layer Guide</a>
+                <a href="./projects/">Projects</a>
+                <a href="./guides/#faq">FAQs</a>
+                <a href="./guides/#journal">Journal</a>
+                <a href="./contact/" class="btn btn-primary btn-nav">Book assessment</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <span class="mobile-label">Paths</span>
+        <a href="./for-homeowners/">Homeowners</a>
+        <a href="./for-architects/">Architects</a>
+        <a href="./for-installers/">Installers</a>
+        <a href="./about/">About</a>
+        <a href="./contact/">Book assessment</a>
+        <span class="mobile-label">Applications</span>
+        <a href="./solutions/">The Problem</a>
+        <a href="./solutions/">The System</a>
+        <a href="./solutions/internal-walls/">Internal walls</a>
+        <a href="./solutions/external-walls/">External walls</a>
+        <a href="./solutions/floors/">Floors</a>
+        <a href="./display/">Demo house</a>
+        <span class="mobile-label">Products</span>
+        <a href="./products/">Products</a>
+        <a href="./products/perlitherm/">PerliTherm</a>
+        <a href="./products/gelpanel/">AeroGel</a>
+        <a href="./products/perliscatch/">PerliScratch</a>
+        <a href="./products/perlimessh/">PerliMesh</a>
+        <a href="./products/aerobond/">AeroBond</a>
+        <a href="./products/perlifinish/">PerliFinish</a>
+        <a href="./products/perlibase/">PerliBase</a>
+        <a href="./products/perlistruct/">PerliStruct</a>
+        <a href="./products/perlilay/">PerliScreed</a>
+        <a href="./products/perlimat/">PerliMat</a>
+        <span class="mobile-label">Projects and journal</span>
+        <a href="./projects/">Projects</a>
+        <a href="./projects/kerry-cottage/">17th-century Cotswold farmhouse</a>
+        <a href="./projects/bristol-mansion-block/">Victorian mansion block, Bristol</a>
+        <a href="./guides/">Journal</a>
+        <a href="./privacy/">Privacy</a>
+        <a href="tel:01285407088">01285 407088</a>
+    </nav>
     <main class="page-main" id="main">
         <div class="container">
             <h1>That page is not here</h1>
@@ -26,5 +106,64 @@
             <p><a href="./">Home</a> · <a href="will-it-work/">Will it work on my house?</a></p>
         </div>
     </main>
+    <footer class="site-footer grain">
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <a class="footer-logo" href="./">
+                    <img src="./assets/images/breathetherm-logo.png" alt="BreatheTherm">
+                </a>
+                <p>Breathable mineral insulation for the UK’s pre-1919 and listed buildings. Walls and floors that can breathe while the home stays warm.</p>
+                <p><a href="tel:01285407088">01285 407088</a><br>
+                    <a href="mailto:hello@breathetherm.co.uk">hello@breathetherm.co.uk</a></p>
+                <p class="footer-audiences">
+                    <a href="./for-homeowners/" data-role="owner">Homeowners</a>
+                    <a href="./for-architects/" data-role="architect">Architects</a>
+                    <a href="./for-installers/" data-role="installer">Installers</a>
+                </p>
+                <p>Company no: 16491516 &nbsp;·&nbsp; VAT: 505 972 871</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigate</h5>
+                <a href="./solutions/#problem">The Problem</a>
+                <a href="./solutions/#approach">The System</a>
+                <a href="./solutions/internal-walls/">Layer Guide</a>
+                <a href="./solutions/external-walls/">External walls</a>
+                <a href="./solutions/floors/">Floors</a>
+                <a href="./projects/">Projects</a>
+                <a href="./guides/">Journal</a>
+            </div>
+            <div class="footer-col">
+                <h5>For you</h5>
+                <a href="./for-homeowners/">Homeowners</a>
+                <a href="./for-architects/">Architects</a>
+                <a href="./for-installers/">Installers</a>
+                <a href="./about/">About</a>
+                <a href="./contact/">Book assessment</a>
+                <a href="./display/">Demo house</a>
+                <a href="./privacy/">Privacy</a>
+            </div>
+            <div class="footer-col">
+                <h5>Products</h5>
+                <a href="./products/">Products</a>
+                <a href="./products/perlitherm/">PerliTherm</a>
+                <a href="./products/gelpanel/">AeroGel</a>
+                <a href="./products/perliscatch/">PerliScratch</a>
+                <a href="./products/perlimessh/">PerliMesh</a>
+                <a href="./products/aerobond/">AeroBond</a>
+                <a href="./products/perlifinish/">PerliFinish</a>
+                <a href="./products/perlibase/">PerliBase</a>
+                <a href="./products/perlistruct/">PerliStruct</a>
+                <a href="./products/perlilay/">PerliScreed</a>
+                <a href="./products/perlimat/">PerliMat</a>
+            </div>
+        </div>
+        <div class="footer-base">
+            <div class="container footer-base-inner">
+                <span>© 2026 Breathe Therm Ltd. All rights reserved. · <a href="./privacy/">Privacy</a></span>
+                <span>The Old Forge, Todenham, Gloucestershire GL56 9PF</span>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -1411,3 +1411,61 @@ cite span {
   }
   .reveal, .reveal-hero { opacity: 1; transform: none; }
 }
+
+/* Phase 1 route layout. Brand tokens above are unchanged. */
+a.tab { display: inline-block; }
+.about-bento.doors {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+.about-bento.doors .about-owners { grid-row: auto; }
+.about-cell .text-link { margin-top: auto; }
+.teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.teaser-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+.teaser-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.teaser-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.teaser-body h3 { font-size: 1.35rem; }
+.teaser-body .text-link { margin-top: auto; }
+.mobile-nav.open {
+  max-height: calc(100vh - var(--nav-h));
+  overflow-y: auto;
+}
+.mobile-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding: 18px 0 0;
+}
+.nick {
+  font-size: 0.95rem;
+  color: var(--ink-mute);
+  margin: 0 0 0.8rem;
+}
+.route-list { display: grid; gap: 10px; margin-top: 1.4rem; }
+.route-list a { font-weight: 600; color: var(--blue); }
+.case-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin: 1rem 0; }
+.band-charcoal .metrics li { color: var(--paper); }
+@media (max-width: 800px) {
+  .teaser-grid,
+  .about-bento.doors { grid-template-columns: 1fr; }
+}
