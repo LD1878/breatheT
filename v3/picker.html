@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BreatheTherm — Layer Guide</title>
+<title>BreatheTherm: Layer Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -113,7 +113,7 @@
   .hotspot:hover .hotspot-halo,
   .hotspot.active .hotspot-halo { border-color: var(--sage); }
 
-  /* BRANDING — top left */
+  /* BRANDING: top left */
   .brand-stamp {
     position: fixed;
     top: 28px;
@@ -151,7 +151,7 @@
     color: var(--ink-muted);
   }
 
-  /* IDLE HINT — bottom left */
+  /* IDLE HINT: bottom left */
   .idle-hint {
     position: fixed;
     bottom: 32px;
@@ -187,7 +187,7 @@
     50%{ opacity:0.2; }
   }
 
-  /* INFO CARD — bottom right */
+  /* INFO CARD: bottom right */
   .info-card {
     position: fixed;
     bottom: 36px;
@@ -354,18 +354,18 @@
     ❧
     <div class="card-ornament-line"></div>
   </div>
-  <div class="card-id" id="cardId">—</div>
+  <div class="card-id" id="cardId">n/a</div>
   <div class="card-title" id="cardTitle">Layer name</div>
   <div class="card-desc" id="cardDesc">Description</div>
   <div class="card-specs">
-    <div class="spec"><div class="spec-key">Thickness</div><div class="spec-val" id="specThickness">—</div></div>
-    <div class="spec"><div class="spec-key">λ Lambda</div><div class="spec-val" id="specLambda">—</div></div>
-    <div class="spec"><div class="spec-key">Sd Range</div><div class="spec-val" id="specSd">—</div></div>
-    <div class="spec"><div class="spec-key">Indicative U</div><div class="spec-val" id="specU">—</div></div>
+    <div class="spec"><div class="spec-key">Thickness</div><div class="spec-val" id="specThickness">n/a</div></div>
+    <div class="spec"><div class="spec-key">λ Lambda</div><div class="spec-val" id="specLambda">n/a</div></div>
+    <div class="spec"><div class="spec-key">Sd Range</div><div class="spec-val" id="specSd">n/a</div></div>
+    <div class="spec"><div class="spec-key">Indicative U</div><div class="spec-val" id="specU">n/a</div></div>
   </div>
   <div class="card-price-row">
     <div class="price-key">guide price, ex. VAT</div>
-    <div class="price-val" id="specPrice">—</div>
+    <div class="price-val" id="specPrice">n/a</div>
   </div>
 </div>
 
@@ -373,15 +373,15 @@
 const data = {
   W1:{id:"W1",title:"PerliTherm 50mm",   desc:"Mineral breathable wall base insulation providing excellent vapour management alongside thermal performance.",thickness:"50mm",  lambda:"0.064 W/m·K",sd:"0.2 – 0.4 m",  u:"See project calc",price:"£45.00 /m²"},
   W2:{id:"W2",title:"Aerogel Boost 10mm",desc:"Ultra-thin aerogel layer for thermally constrained retrofits where build depth is at a premium.",           thickness:"10mm",  lambda:"0.017 W/m·K",sd:"0.04 – 0.08 m",u:"See project calc",price:"£23.25 /m²"},
-  W3:{id:"W3",title:"Lime Render 20mm",  desc:"Traditional breathable lime finish. Compatible with historic masonry; allows the wall to breathe freely.",  thickness:"20mm",  lambda:"—",          sd:"0.10 – 0.20 m",u:"—",               price:"Project specific"},
-  W4:{id:"W4",title:"Existing Masonry",  desc:"Original structural wall substrate. Thermal properties assessed by site survey prior to specification.",    thickness:"Varies",lambda:"—",          sd:"Varies",       u:"Project specific",price:"—"},
-  W5:{id:"W5",title:"Internal Finish",   desc:"Breathable internal surface treatment — paints and plasters are specified vapour-open throughout.",         thickness:"Varies",lambda:"—",          sd:"Vapour open",  u:"—",               price:"Project specific"},
+  W3:{id:"W3",title:"Lime Render 20mm",  desc:"Traditional breathable lime finish. Compatible with historic masonry; allows the wall to breathe freely.",  thickness:"20mm",  lambda:"n/a",          sd:"0.10 – 0.20 m",u:"n/a",               price:"Project specific"},
+  W4:{id:"W4",title:"Existing Masonry",  desc:"Original structural wall substrate. Thermal properties assessed by site survey prior to specification.",    thickness:"Varies",lambda:"n/a",          sd:"Varies",       u:"Project specific",price:"n/a"},
+  W5:{id:"W5",title:"Internal Finish",   desc:"Breathable internal surface treatment, paints and plasters are specified vapour-open throughout.",         thickness:"Varies",lambda:"n/a",          sd:"Vapour open",  u:"n/a",               price:"Project specific"},
   F1:{id:"F1",title:"PerliBase 100mm",   desc:"Primary breathable floor insulation. Load-rated and hygroscopic; acts as a moisture buffer for the whole floor assembly.",thickness:"100mm",lambda:"0.045 W/m·K",sd:"0.4 – 0.8 m",u:"See project calc",price:"£79.00 /m²"},
-  F2:{id:"F2",title:"PerliStruct Layer", desc:"Structural load distribution layer, spreading point loads evenly across the PerliBase insulation below.",   thickness:"Varies",lambda:"0.045 W/m·K",sd:"—",            u:"—",               price:"Project specific"},
-  F3:{id:"F3",title:"Mineral Levelling", desc:"Breathable levelling substrate forming a consistent bed for screed or direct finish over irregular sub-floors.",thickness:"Varies",lambda:"—",       sd:"Vapour open",  u:"—",               price:"—"},
-  F4:{id:"F4",title:"Screed Finish",     desc:"Dense cementitious or anhydrite screed. Specified to suit underfloor heating and final floor covering.",    thickness:"Varies",lambda:"—",          sd:"0.6 – 1.2 m",  u:"—",               price:"Project specific"},
-  F5:{id:"F5",title:"Underlay",          desc:"Impact and acoustic underlay substrate positioned beneath the final floor covering.",                       thickness:"Varies",lambda:"—",          sd:"—",            u:"—",               price:"—"},
-  F6:{id:"F6",title:"Final Floor Finish",desc:"Tile, engineered timber, stone or surface finish — specified by architect or designer to suit the project.",thickness:"Varies",lambda:"—",          sd:"—",            u:"—",               price:"Project specific"},
+  F2:{id:"F2",title:"PerliStruct Layer", desc:"Structural load distribution layer, spreading point loads evenly across the PerliBase insulation below.",   thickness:"Varies",lambda:"0.045 W/m·K",sd:"n/a",            u:"n/a",               price:"Project specific"},
+  F3:{id:"F3",title:"Mineral Levelling", desc:"Breathable levelling substrate forming a consistent bed for screed or direct finish over irregular sub-floors.",thickness:"Varies",lambda:"n/a",       sd:"Vapour open",  u:"n/a",               price:"n/a"},
+  F4:{id:"F4",title:"Screed Finish",     desc:"Dense cementitious or anhydrite screed. Specified to suit underfloor heating and final floor covering.",    thickness:"Varies",lambda:"n/a",          sd:"0.6 – 1.2 m",  u:"n/a",               price:"Project specific"},
+  F5:{id:"F5",title:"Underlay",          desc:"Impact and acoustic underlay substrate positioned beneath the final floor covering.",                       thickness:"Varies",lambda:"n/a",          sd:"n/a",            u:"n/a",               price:"n/a"},
+  F6:{id:"F6",title:"Final Floor Finish",desc:"Tile, engineered timber, stone or surface finish, specified by architect or designer to suit the project.",thickness:"Varies",lambda:"n/a",          sd:"n/a",            u:"n/a",               price:"Project specific"},
 };
 
 const card=document.getElementById('infoCard');

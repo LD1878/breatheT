@@ -1,6 +1,6 @@
 /* ============================================
    BreatheTherm Interactive Build-up Guide
-   Styles — clean architectural aesthetic
+   Styles, clean architectural aesthetic
    ============================================ */
 
 :root {
@@ -147,13 +147,13 @@ body {
   height: 100%;
 }
 
-/* Hit areas — invisible, large for easy clicking */
+/* Hit areas: invisible, large for easy clicking */
 .zone-hit {
   fill: transparent;
   cursor: pointer;
 }
 
-/* Visual fill — shows on hover/active */
+/* Visual fill: shows on hover/active */
 .zone-visual {
   fill: transparent;
   stroke: transparent;
@@ -356,7 +356,7 @@ body {
   position: relative;
 }
 
-/* WALL layout — horizontal layers */
+/* WALL layout: horizontal layers */
 .crosssection-diagram.wall-section {
   display: flex;
   flex-direction: row;
@@ -368,7 +368,7 @@ body {
   position: relative;
 }
 
-/* FLOOR/CEILING layout — vertical layers */
+/* FLOOR/CEILING layout: vertical layers */
 .crosssection-diagram.floor-section {
   display: flex;
   flex-direction: column-reverse; /* bottom layer first */
@@ -390,7 +390,7 @@ body {
   overflow: hidden;
 }
 
-/* Wall layers — horizontal direction */
+/* Wall layers: horizontal direction */
 .wall-section .layer-block {
   height: 100%;
   min-width: 22px;
@@ -399,7 +399,7 @@ body {
 }
 .wall-section .layer-block:last-child { border-right: none; }
 
-/* Floor/Ceiling layers — vertical direction */
+/* Floor/Ceiling layers: vertical direction */
 .floor-section .layer-block {
   width: 100%;
   min-height: 22px;
@@ -469,7 +469,7 @@ body {
   margin-top: 3px;
 }
 
-/* Narrow wall layers — hide text, show on hover tooltip */
+/* Narrow wall layers: hide text, show on hover tooltip */
 .wall-section .layer-block.narrow .layer-name { display: none; }
 .wall-section .layer-block.narrow .layer-thick { display: none; }
 .wall-section .layer-block.narrow .layer-product-tag { display: none; }

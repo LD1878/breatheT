@@ -319,7 +319,7 @@ The gradient overlay (`.hero-overlay`) and grain are **commented out in HTML**. 
 
 ### Other copy defects (not in the brief, logged for later steps)
 
-- Em dashes in live copy: Josh bio, Greg bio, timber-frame FAQ, homeowner modal ("No hard sell — just clear, honest advice."), architect modal. Also en dashes in ranges (`2–5 days`, `£8,000–£20,000`) and placeholder em dashes (`—`) in the layer card.
+- Em dashes in live copy: Josh bio, Greg bio, timber-frame FAQ, homeowner modal ("No hard sell, just clear, honest advice."), architect modal. Also en dashes in ranges (`2–5 days`, `£8,000–£20,000`) and placeholder em dashes (`n/a`) in the layer card.
 - "FYI lime plaster" in the installation-time FAQ (visible and JSON-LD).
 - Footer legal line: "Breathe Therm Ltd" (space in the name).
 - JSON-LD FAQs do not match the visible list (JSON-LD includes cost and grants, omits several visible questions, and uses different listed-building wording).

@@ -1,5 +1,5 @@
 /**
- * BreatheTherm — main.js
+ * BreatheTherm: main.js
  * 1. Navigation scroll effect (invisible on hero, fades in on scroll)
  * 2. Parallax hero background
  * 3. Scrollytelling reveal logic
@@ -76,7 +76,7 @@
 
     /* ─── 3. SCROLLYTELLING REVEAL LOGIC ───────────────────── */
 
-    // Hero elements — fire immediately on load
+    // Hero elements: fire immediately on load
     function revealHero() {
         qsa('.reveal-hero').forEach((el, i) => {
             // Stagger each hero child slightly beyond its own delay class
@@ -189,7 +189,7 @@
     // The element bars inside .system-element are triggered by the
     // existing IntersectionObserver via the .reveal class.
     // They use .visible to trigger the CSS ::after scaleX animation.
-    // No extra JS needed — CSS handles it via:
+    // No extra JS needed: CSS handles it via:
     //   .system-element.visible .element-bar::after { transform: scaleX(1); }
 
     /* ─── STAT NUMBER COUNT-UP ──────────────────────────────── */
@@ -227,7 +227,7 @@
     const countData = [
         { target: 850, suffix: '+' },
         { target: 65,  suffix: '%' },
-        { target: null },            // WTA — no count
+        { target: null },            // WTA: no count
         { target: 0,   suffix: '%' },
     ];
 
@@ -251,6 +251,6 @@
     });
 
     /* ─── PAGE LOAD COMPLETE ───────────────────────────────── */
-    console.log('BreatheTherm — site initialised.');
+    console.log('BreatheTherm: site initialised.');
 
 })();

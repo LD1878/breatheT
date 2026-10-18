@@ -1,5 +1,5 @@
 /* ============================================================
-   BREATHETHERM — PREMIUM HERITAGE INSULATION
+   BREATHETHERM: PREMIUM HERITAGE INSULATION
    Aesthetic: Clean Modern · Light Stone · Forest Green
    ============================================================ */
 
@@ -7,7 +7,7 @@
 
 /* ── TOKENS ── */
 :root {
-    --primary:          #1B3F2F;   /* Deep forest green — CTA, logo accent */
+    --primary:          #1B3F2F;   /* Deep forest green: CTA, logo accent */
     --primary-dark:     #122b1f;
     --primary-light:    rgba(27,63,47,0.08);
     --accent:           #2D6A4F;   /* Mid green for highlights */
@@ -192,7 +192,7 @@ em { font-style: italic; }
     transform: translateX(4px);
 }
 
-/* Primary green button — matches "Discuss My Project" in nav */
+/* Primary green button: matches "Discuss My Project" in nav */
 .btn-primary  { background: var(--primary); color: white; border-radius: var(--radius-sm); }
 .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(27,63,47,0.30); }
 
@@ -783,7 +783,7 @@ em { font-style: italic; }
     margin: 0;
 }
 
-/* Tab navigation — matches image tabs: Wall Systems / Floor Systems / Hybrid Upgrades */
+/* Tab navigation: matches image tabs: Wall Systems / Floor Systems / Hybrid Upgrades */
 .system-tabs {
     display: flex;
     gap: 2px;
@@ -1242,7 +1242,7 @@ em { font-style: italic; }
     flex-shrink: 0;
 }
 
-/* Photo card grid — 4 columns matching image */
+/* Photo card grid: 4 columns matching image */
 .case-studies {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

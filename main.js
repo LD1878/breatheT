@@ -91,7 +91,7 @@
       title: 'PerliFinish',
       desc: 'A breathable lime finish, ready for decoration.',
       thick: '20mm',
-      lambda: '—',
+      lambda: 'n/a',
       sd: '0.10 – 0.20 m',
       price: '£6.60 /m²'
     },

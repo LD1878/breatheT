@@ -1,12 +1,12 @@
 /* ============================================
    BreatheTherm Interactive Build-up Guide
-   script.js — zone selection + layer hover
+   script.js, zone selection + layer hover
    ============================================ */
 
 'use strict';
 
 // ─────────────────────────────────────────────
-// DATA — zones, layers, product data sheets
+// DATA: zones, layers, product data sheets
 // ─────────────────────────────────────────────
 
 const ZONES = {
@@ -35,7 +35,7 @@ const ZONES = {
             { key: 'λ (W/m·K)', val: '~0.77' },
             { key: 'Thickness',  val: '215mm' },
           ],
-          note: 'Existing substrate — no additional cost. Clean, dry and free of loose material before application.',
+          note: 'Existing substrate: no additional cost. Clean, dry and free of loose material before application.',
         },
       },
       {
@@ -47,7 +47,7 @@ const ZONES = {
         isProduct:   true,
         productTag:  'BASE INSULATION',
         info: {
-          name:        'PerliTherm — 50mm IWI',
+          name:        'PerliTherm (50mm IWI)',
           description: 'Mineral perlite-based insulation plaster. Breathable and fully vapour-open. Applied wet, bonds directly to the substrate. No adhesive membranes required. Ideal for solid masonry and all heritage wall types.',
           specs: [
             { key: 'λ (W/m·K)',  val: '0.064' },
@@ -116,7 +116,7 @@ const ZONES = {
         isProduct:   true,
         productTag:  'PERFORMANCE BOOST',
         info: {
-          name:        'Aerogel Boost Module — 10mm',
+          name:        'Aerogel Boost Module (10mm)',
           description: 'Ultra-slim aerogel blanket bonded with AeroBond adhesive. Dramatically improves thermal performance where build-up thickness is constrained. Very high vapour permeability.',
           specs: [
             { key: 'λ (W/m·K)',  val: '0.017' },
@@ -137,7 +137,7 @@ const ZONES = {
         isProduct:   true,
         productTag:  'BASE INSULATION',
         info: {
-          name:        'PerliTherm — 50mm EWI',
+          name:        'PerliTherm (50mm EWI)',
           description: 'Mineral perlite insulation plaster applied to the external face of the wall. Breathable and vapour-open. Can be applied without mechanical fixings on suitable substrates.',
           specs: [
             { key: 'λ (W/m·K)',  val: '0.064' },
@@ -162,7 +162,7 @@ const ZONES = {
             { key: 'λ (W/m·K)',  val: '~1.4' },
             { key: 'Thickness',   val: '350–500mm' },
           ],
-          note: 'Existing substrate — no additional cost. Survey condition and pointing before overclad.',
+          note: 'Existing substrate: no additional cost. Survey condition and pointing before overclad.',
         },
       },
     ],
@@ -220,7 +220,7 @@ const ZONES = {
         isProduct:   true,
         productTag:  'FLOOR INSULATION',
         info: {
-          name:        'PerliBase — 100mm',
+          name:        'PerliBase (100mm)',
           description: 'Expanded perlite loose-fill floor insulation. Poured and screeded in situ to achieve a consistent level bed. No membranes or DPC required in most applications. Fully vapour-open.',
           specs: [
             { key: 'λ (W/m·K)',  val: '0.045' },
@@ -228,7 +228,7 @@ const ZONES = {
             { key: 'Bags / m²',  val: '2.00' },
             { key: '£ / m² ex VAT', val: '£79.00', isPrice: true },
           ],
-          note: 'High compressive strength — suitable under structural screed. Other thicknesses available: 75mm (£59.25) to 200mm (£158.00) ex VAT.',
+          note: 'High compressive strength, suitable under structural screed. Other thicknesses available: 75mm (£59.25) to 200mm (£158.00) ex VAT.',
         },
       },
       {
@@ -263,7 +263,7 @@ const ZONES = {
       {
         id:          'roof_covering',
         name:        'Roof Covering',
-        thickness:   '—',
+        thickness:   'n/a',
         visualSize:  30,
         colorHex:    '#3c3c3c',
         isProduct:   false,
@@ -279,7 +279,7 @@ const ZONES = {
       {
         id:          'breathable_membrane',
         name:        'Breathable Membrane',
-        thickness:   '—',
+        thickness:   'n/a',
         visualSize:  18,
         colorHex:    '#5a9e6a',
         isProduct:   false,
@@ -301,8 +301,8 @@ const ZONES = {
         isProduct:   true,
         productTag:  'RAFTER INSULATION',
         info: {
-          name:        'PerliTherm — 70mm Roof',
-          description: 'Mineral perlite insulation plaster between and over rafters. Vapour-open — compatible with breathable warm and cold roof build-ups. No synthetic membranes required.',
+          name:        'PerliTherm (70mm Roof)',
+          description: 'Mineral perlite insulation plaster between and over rafters. Vapour-open, compatible with breathable warm and cold roof build-ups. No synthetic membranes required.',
           specs: [
             { key: 'λ (W/m·K)',  val: '0.064' },
             { key: 'Sd (m)',      val: '0.28–0.56' },
@@ -463,7 +463,7 @@ function showProductData(layer) {
 }
 
 function clearProductData() {
-  // Don't immediately clear — let the user read it briefly
+  // Don't immediately clear: let the user read it briefly
   // Only clear when another zone is selected or cursor fully leaves the diagram
 }
 
