@@ -218,10 +218,9 @@
   const step1 = qs('#contactStep1');
   const step2 = qs('#contactStep2');
   const form = qs('#leadForm');
-  const success = qs('#formSuccess');
 
   function selectedRole() {
-    return qs('input[name="role"]:checked', form);
+    return form ? qs('input[name="role"]:checked', form) : null;
   }
 
   function goStep2() {
@@ -274,9 +273,6 @@
     try { sessionStorage.setItem('bt-audience', role); } catch (err) { /* storage off */ }
   }
 
-  const pagePathInput = qs('#pagePath');
-  if (pagePathInput) pagePathInput.value = window.location.pathname;
-
   try {
     const storedAudience = sessionStorage.getItem('bt-audience');
     if (storedAudience) {
@@ -300,55 +296,226 @@
     });
   });
 
-  function bindLeadForm(f, ok) {
-    if (!f) return;
-    f.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (step1 && !step1.hidden && !selectedRole()) {
-        goStep2();
-        return;
+  /* ---------------------------------------------------------------------
+     Enquiry forms
+     Every form marked [data-lead-form] posts its fields to Web3Forms, which
+     emails them to LEAD.email. Set LEAD.accessKey to switch delivery on;
+     until then, and whenever a send fails, the form hands the enquiry to
+     the visitor's email app instead, so no lead is lost.
+
+     Get a free key for hello@breathetherm.co.uk at https://web3forms.com
+     (250 submissions a month, spam filtering included) and paste it below.
+     To use a different provider, change endpoint and the body in sendLead().
+     See FORMS.md for the setup step and how to add another form.
+  --------------------------------------------------------------------- */
+  const LEAD = {
+    email: 'hello@breathetherm.co.uk',
+    phone: '01285 407088',
+    endpoint: 'https://api.web3forms.com/submit',
+    accessKey: ''
+  };
+
+  const FIELD_LABELS = {
+    name: 'Name', 'first-name': 'First name', email: 'Email', phone: 'Phone',
+    postcode: 'Postcode', company: 'Company', practice: 'Practice',
+    area: 'Area covered', trade: 'Main trade', project_stage: 'Project stage',
+    message: 'Message', role: 'Enquiring as', audience: 'Audience',
+    answers: 'Answers', consent: 'Happy to be contacted'
+  };
+
+  function fieldLabel(key) {
+    return FIELD_LABELS[key] || key.replace(/[-_]/g, ' ').replace(/^./, (c) => c.toUpperCase());
+  }
+
+  function formDataOf(f) {
+    const data = {};
+    new FormData(f).forEach((value, key) => {
+      if (key === 'botcheck') return;
+      if (key === 'consent') { data[key] = 'Yes'; return; }
+      const text = typeof value === 'string' ? value.trim() : value;
+      if (!text) return;
+      data[key] = data[key] ? `${data[key]}, ${text}` : text;
+    });
+    return data;
+  }
+
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function fieldError(field, message) {
+    const group = field.closest('.form-group') || field.parentNode;
+    let err = group.querySelector('.form-error');
+    if (!err) {
+      err = document.createElement('span');
+      err.className = 'form-error';
+      err.setAttribute('role', 'alert');
+      group.appendChild(err);
+    }
+    err.textContent = message;
+    field.setAttribute('aria-invalid', 'true');
+    const clear = () => {
+      field.removeAttribute('aria-invalid');
+      group.querySelector('.form-error')?.remove();
+    };
+    field.addEventListener('input', clear, { once: true });
+    field.addEventListener('change', clear, { once: true });
+  }
+
+  function validateForm(f) {
+    let firstBad = null;
+    qsa('[required]', f).forEach((field) => {
+      if (field.type === 'radio') return;
+      let message = '';
+      if (field.type === 'checkbox') {
+        if (!field.checked) message = 'Please tick to continue.';
+      } else if (!field.value.trim()) {
+        message = 'This field is required.';
+      } else if (field.type === 'email' && !EMAIL_PATTERN.test(field.value.trim())) {
+        message = 'Enter a valid email address.';
       }
-      if (step2 && step2.hidden) {
-        goStep2();
-        return;
-      }
-      let valid = true;
-      qsa('[required]', this).forEach((field) => {
-        if (field.type === 'radio') return;
-        const group = field.closest('.form-group') || field.parentNode;
-        let err = group.querySelector('.form-error');
-        if (!field.value.trim()) {
-          field.style.borderColor = '#FF643E';
-          if (!err) {
-            err = document.createElement('span');
-            err.className = 'form-error';
-            err.setAttribute('role', 'alert');
-            err.textContent = 'This field is required.';
-            group.appendChild(err);
-          }
-          field.addEventListener('input', () => {
-            field.style.borderColor = '';
-            if (err) err.remove();
-          }, { once: true });
-          valid = false;
-        } else if (err) {
-          field.style.borderColor = '';
-          err.remove();
-        }
-      });
-      if (!valid) return;
-      const picked = selectedRole();
-      if (picked) rememberAudience(picked.value);
-      f.hidden = true;
-      if (ok) {
-        ok.hidden = false;
-        ok.style.display = 'block';
+      const group = field.closest('.form-group') || field.parentNode;
+      if (message) {
+        fieldError(field, message);
+        if (!firstBad) firstBad = field;
+      } else {
+        group.querySelector('.form-error')?.remove();
+        field.removeAttribute('aria-invalid');
       }
     });
+    if (firstBad) firstBad.focus();
+    return !firstBad;
   }
-  bindLeadForm(form, success);
-  bindLeadForm(qs('#techPackForm'), qs('#techPackSuccess'));
-  bindLeadForm(qs('#quizCapture'), qs('#formSuccess'));
+
+  function enquirySubject(f, data) {
+    const who = data.name || data['first-name'] || '';
+    const what = f.dataset.formName || 'Website enquiry';
+    return who ? `${what} — ${who}` : what;
+  }
+
+  function mailtoHref(subject, data) {
+    const body = Object.keys(data)
+      .filter((key) => key !== 'subject')
+      .map((key) => `${fieldLabel(key)}: ${data[key]}`)
+      .join('\n');
+    return `mailto:${LEAD.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function sendLead(f, data) {
+    const payload = Object.assign({}, data, {
+      subject: enquirySubject(f, data),
+      from_name: 'breathetherm.co.uk',
+      page: window.location.pathname,
+      submitted_at: new Date().toISOString()
+    });
+    if (!LEAD.accessKey) return Promise.resolve({ ok: false, reason: 'unconfigured', payload });
+    return fetch(LEAD.endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.assign({ access_key: LEAD.accessKey }, payload))
+    })
+      .then((res) => res.json().catch(() => ({})).then((body) => {
+        if (!res.ok || body.success === false) throw new Error(body.message || `HTTP ${res.status}`);
+        return { ok: true, payload };
+      }))
+      .catch((error) => ({ ok: false, reason: 'error', error, payload }));
+  }
+
+  function showPanel(f, panel) {
+    f.hidden = true;
+    panel.hidden = false;
+    panel.style.display = 'block';
+    panel.setAttribute('tabindex', '-1');
+    panel.focus({ preventScroll: true });
+  }
+
+  function showFallback(f, result) {
+    const link = mailtoHref(result.payload.subject, result.payload);
+    f.hidden = true;
+    let panel = f.parentNode.querySelector('.form-fallback');
+    if (!panel) {
+      panel = document.createElement('div');
+      panel.className = 'form-fallback';
+      f.parentNode.insertBefore(panel, f.nextSibling);
+    }
+    panel.textContent = '';
+
+    const auto = f.dataset.fallbackAuto !== 'false';
+    const heading = document.createElement('h3');
+    heading.textContent = result.reason === 'error'
+      ? 'That didn’t send — your details are safe'
+      : 'One more step to send';
+    const copy = document.createElement('p');
+    if (result.reason === 'error') {
+      copy.textContent = auto
+        ? 'Our form service did not accept the message. Send it from your email app instead, or call us.'
+        : 'Our form service did not accept the message. Email it to us instead, or carry on below.';
+    } else {
+      copy.textContent = auto
+        ? 'Your email app is opening with your details. Press send and it reaches us.'
+        : 'Email your details to us, or carry on — your answer is ready.';
+    }
+    const actions = document.createElement('p');
+    actions.className = 'form-fallback-actions';
+
+    const mail = document.createElement('a');
+    mail.href = link;
+    mail.textContent = `Email ${LEAD.email}`;
+    actions.append(mail);
+
+    if (f.dataset.fallbackLink) {
+      const next = document.createElement('a');
+      next.href = f.dataset.fallbackLink;
+      next.textContent = f.dataset.fallbackLabel || 'Continue';
+      actions.append(document.createTextNode(' · '), next);
+    }
+
+    const phone = document.createElement('a');
+    phone.href = 'tel:01285407088';
+    phone.textContent = `Call ${LEAD.phone}`;
+    actions.append(document.createTextNode(' · '), phone);
+
+    panel.append(heading, copy, actions);
+    panel.setAttribute('tabindex', '-1');
+    panel.focus({ preventScroll: true });
+
+    if (auto) window.location.href = link;
+  }
+
+  function bindLeadForm(f) {
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (f.dataset.sending === 'true') return;
+      if (f.querySelector('[name="botcheck"]')?.checked) return;
+
+      if (step1 && !step1.hidden && !selectedRole()) { goStep2(); return; }
+      if (step2 && step2.hidden) { goStep2(); return; }
+      if (!validateForm(f)) return;
+
+      const picked = selectedRole();
+      if (picked) rememberAudience(picked.value);
+
+      const data = formDataOf(f);
+      const submit = f.querySelector('[type="submit"]');
+      const label = submit ? submit.textContent : '';
+      f.dataset.sending = 'true';
+      f.setAttribute('aria-busy', 'true');
+      if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
+
+      const result = await sendLead(f, data);
+
+      f.dataset.sending = 'false';
+      f.removeAttribute('aria-busy');
+      if (submit) { submit.disabled = false; submit.textContent = label; }
+
+      if (!result.ok) { showFallback(f, result); return; }
+
+      const panel = f.dataset.success ? document.getElementById(f.dataset.success) : null;
+      if (panel) showPanel(f, panel);
+      else f.hidden = true;
+      f.dispatchEvent(new CustomEvent('bt:lead-sent', { bubbles: true, detail: result.payload }));
+    });
+  }
+
+  qsa('form[data-lead-form]').forEach(bindLeadForm);
 
   qsa('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {

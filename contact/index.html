@@ -92,8 +92,8 @@
                 </div>
 
                 <div class="contact-form-wrap assess-card">
-                    <form class="lead-form" id="leadForm" novalidate>
-                        <input type="hidden" name="page_path" id="pagePath" value="/contact/">
+                    <form class="lead-form" id="leadForm" data-lead-form data-form-name="Free assessment request" data-success="formSuccess" novalidate>
+                        <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <input type="hidden" name="audience" id="audienceDoor" value="">
                         <div class="contact-step is-on" data-step="1" id="contactStep1">
                             <p class="step-label">Step 1 of 2</p>
@@ -136,10 +136,18 @@
                                     <input class="form-input" id="c-postcode" name="postcode" type="text" autocomplete="postal-code" required>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="c-message">About the building (optional)</label>
+                                <textarea class="form-input" id="c-message" name="message" rows="3" placeholder="Age, wall type, what is going wrong"></textarea>
+                            </div>
                             <button type="submit" class="btn btn-primary btn-assess">Book free assessment</button>
                             <p class="form-promise">We will call within one working day. Prefer to speak now? <a href="tel:01285407088">01285 407088</a>.</p>
+                            <p class="form-privacy">We use these details only to reply to your enquiry. See our <a href="../privacy/">privacy notice</a>.</p>
                         </div>
                     </form>
+                    <noscript>
+                        <p class="form-privacy">This form needs JavaScript. Please email <a href="mailto:hello@breathetherm.co.uk">hello@breathetherm.co.uk</a> or call <a href="tel:01285407088">01285 407088</a>.</p>
+                    </noscript>
                     <div class="form-success" id="formSuccess" hidden>
                         <h3>Thank you, we’ll be in touch soon.</h3>
                         <p>A member of the team will call within one working day to arrange your free property assessment.</p>

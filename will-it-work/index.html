@@ -156,7 +156,9 @@
 
                 <div class="quiz-screen" data-screen="7" data-type="capture">
                     <h2>Nearly there. Where shall we send your answer?</h2>
-                    <form class="lead-form" id="quizCapture" novalidate>
+                    <form class="lead-form" id="quizCapture" data-lead-form data-form-name="Will it work — quiz answers" data-fallback-link="result/" data-fallback-label="See your answer anyway" data-fallback-auto="false" novalidate>
+                        <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <input type="hidden" name="answers" id="quizAnswers" value="">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="q-name">First name</label>
@@ -240,23 +242,29 @@
 
             multiNext.addEventListener('click', function () { show(i + 1); });
 
-            document.getElementById('quizCapture').addEventListener('submit', function (e) {
-                e.preventDefault();
-                var name = document.getElementById('q-name');
-                var email = document.getElementById('q-email');
-                var consent = document.getElementById('q-consent');
-                var ok = true;
-                [name, email].forEach(function (field) {
-                    if (!field.value.trim()) {
-                        field.style.borderColor = '#C0392B';
-                        ok = false;
-                    } else field.style.borderColor = '';
+            var capture = document.getElementById('quizCapture');
+            var answers = document.getElementById('quizAnswers');
+
+            function collectAnswers() {
+                var lines = [];
+                screens.forEach(function (screen) {
+                    var picked = screen.querySelectorAll('.quiz-option.is-picked');
+                    if (!picked.length) return;
+                    var q = screen.querySelector('h2');
+                    lines.push((q ? q.textContent.trim() : 'Question') + ': ' +
+                        Array.prototype.map.call(picked, function (b) { return b.textContent.trim(); }).join('; '));
                 });
-                if (!consent.checked) {
-                    consent.focus();
-                    ok = false;
-                }
-                if (!ok) return;
+                answers.value = lines.join('\n');
+            }
+
+            screens.forEach(function (screen) {
+                screen.addEventListener('click', function (e) {
+                    if (e.target.classList.contains('quiz-option')) collectAnswers();
+                });
+            });
+
+            capture.addEventListener('submit', collectAnswers);
+            capture.addEventListener('bt:lead-sent', function () {
                 window.location.href = 'result/';
             });
         })();

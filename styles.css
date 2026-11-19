@@ -1086,6 +1086,8 @@ cite span {
 .assess-card .form-promise {
   color: var(--ink-mute);
 }
+.assess-card .assess-legend { color: var(--ink); }
+.assess-card .form-privacy { color: var(--ink-mute); }
 .assess-card .form-promise a { color: var(--blue); }
 .assess-card .form-success,
 .assess-card .form-success h3,
@@ -1172,7 +1174,26 @@ cite span {
 }
 .form-promise a { color: var(--blue); font-weight: 600; }
 .form-error { display: block; font-size: 0.78rem; color: var(--coral-text); margin-top: 4px; }
+.form-input[aria-invalid="true"] { border-color: var(--coral-text); }
+textarea.form-input { resize: vertical; min-height: 96px; }
+.form-honey { display: none; }
+.form-privacy a { color: var(--blue); font-weight: 600; }
+.form-fallback {
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--amber);
+  padding: 22px 24px;
+  color: var(--ink);
+}
+.form-fallback h3 { margin-bottom: 0.5rem; }
+.form-fallback p { color: var(--ink-soft); margin-bottom: 0.6rem; }
+.form-fallback-actions { font-weight: 600; }
+.form-fallback-actions a { color: var(--blue); font-weight: 600; }
+.lead-card { max-width: 640px; margin: 2.4rem auto 0; }
+.lead-card-intro { color: var(--ink-mute); margin-bottom: 1.2rem; }
 .form-success[hidden] { display: none; }
+.form-success a { color: var(--blue); font-weight: 600; }
+.form-success:focus, .form-fallback:focus { outline: none; }
 .form-success h3, .form-success h4 { margin-bottom: 0.6rem; }
 .lead-form[hidden] { display: none; }
 

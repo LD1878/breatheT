@@ -96,8 +96,68 @@
             </ul>
 
             <div class="hero-ctas">
-                <a href="mailto:hello@breathetherm.co.uk?subject=Installer%20Network%20Enquiry" class="btn btn-navy btn-arrow">Apply to join the network</a>
+                <a href="#apply" class="btn btn-navy btn-arrow">Apply to join the network</a>
                 <a href="https://wa.me/+447887591971" class="btn btn-outline-navy">WhatsApp to discuss</a>
+            </div>
+
+            <div class="assess-card lead-card" id="apply">
+                <h2 class="assess-legend">Apply to join the network</h2>
+                <p class="lead-card-intro">Tell us where you work and what you install. We reply within one working day.</p>
+                <form class="lead-form" data-lead-form data-form-name="Installer network application" data-success="applySuccess" novalidate>
+                    <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" name="audience" value="installer">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="i-name">Your name</label>
+                            <input class="form-input" id="i-name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="i-company">Company</label>
+                            <input class="form-input" id="i-company" name="company" type="text" autocomplete="organization" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="i-email">Email</label>
+                            <input class="form-input" id="i-email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="i-phone">Phone</label>
+                            <input class="form-input" id="i-phone" name="phone" type="tel" autocomplete="tel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="i-area">Area you cover</label>
+                            <input class="form-input" id="i-area" name="area" type="text" placeholder="Town or county" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="i-trade">Main trade</label>
+                            <select class="form-input" id="i-trade" name="trade">
+                                <option>Plastering</option>
+                                <option>General building</option>
+                                <option>Insulation</option>
+                                <option>Joinery</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="i-message">Anything we should know? (optional)</label>
+                        <textarea class="form-input" id="i-message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-navy btn-arrow">Send application</button>
+                    <p class="form-promise">Or call <a href="tel:01285407088">01285 407088</a>.</p>
+                    <p class="form-privacy">We use these details only to reply to your enquiry. See our <a href="../privacy/">privacy notice</a>.</p>
+                </form>
+                <noscript>
+                    <p class="form-privacy">This form needs JavaScript. Please email <a href="mailto:hello@breathetherm.co.uk">hello@breathetherm.co.uk</a> or call <a href="tel:01285407088">01285 407088</a>.</p>
+                </noscript>
+                <div class="form-success" id="applySuccess" hidden>
+                    <h3>Thanks — application received.</h3>
+                    <p>We will reply within one working day to arrange a call about your area.</p>
+                    <p>In the meantime, call <a href="tel:01285407088">01285 407088</a>.</p>
+                </div>
             </div>
         </div>
     

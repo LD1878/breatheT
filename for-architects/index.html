@@ -84,8 +84,58 @@
                             <li>Hygrothermal modelling service</li>
                             <li>BIM objects &amp; full CAD detail library</li>
                         </ul>
-                        <a href="../contact/" class="btn btn-primary" data-role="architect">Get the technical pack</a>
+                        <a href="#technical-pack" class="btn btn-primary" data-role="architect">Get the technical pack</a>
                     </article>
+
+                <div class="assess-card lead-card" id="technical-pack">
+                    <h2 class="assess-legend">Request the technical pack</h2>
+                    <p class="lead-card-intro">WTA test data, hygrothermal modelling notes, BIM objects, CAD details and datasheets, sent by email.</p>
+                    <form class="lead-form" data-lead-form data-form-name="Technical pack request" data-success="packSuccess" novalidate>
+                        <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <input type="hidden" name="audience" value="architect">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="p-name">Your name</label>
+                                <input class="form-input" id="p-name" name="name" type="text" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="p-practice">Practice</label>
+                                <input class="form-input" id="p-practice" name="practice" type="text" autocomplete="organization" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="p-email">Email</label>
+                                <input class="form-input" id="p-email" name="email" type="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="p-stage">Project stage</label>
+                                <select class="form-input" id="p-stage" name="project_stage">
+                                    <option>Feasibility</option>
+                                    <option>Planning</option>
+                                    <option>Building regulations</option>
+                                    <option>On site</option>
+                                    <option>Just researching</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="p-message">Building or project (optional)</label>
+                            <textarea class="form-input" id="p-message" name="message" rows="3" placeholder="Building type, age, listed status, wall build-up"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send me the technical pack</button>
+                        <p class="form-promise">Usually the same working day. Or call <a href="tel:01285407088">01285 407088</a>.</p>
+                        <p class="form-privacy">We use these details only to reply to your enquiry. See our <a href="../privacy/">privacy notice</a>.</p>
+                    </form>
+                    <noscript>
+                        <p class="form-privacy">This form needs JavaScript. Please email <a href="mailto:hello@breathetherm.co.uk">hello@breathetherm.co.uk</a> or call <a href="tel:01285407088">01285 407088</a>.</p>
+                    </noscript>
+                    <div class="form-success" id="packSuccess" hidden>
+                        <h3>Technical pack on its way.</h3>
+                        <p>We will email the pack and can follow up with hygrothermal modelling or CAD details if you need them.</p>
+                        <p>Or call <a href="tel:01285407088">01285 407088</a>.</p>
+                    </div>
+                </div>
                 <h2>What is WTA certification and why does it matter?</h2>
                 <p>The WTA (Wissenschaftlich-Technische Arbeitsgemeinschaft) is the German scientific association for building maintenance and monument preservation. WTA Merkblatt 6-4 defines the internationally recognised technical standard for internal insulation of historic buildings. A WTA-compliant system has been tested to manage moisture correctly in heritage wall constructions, giving architects, conservation officers and homeowners confidence that the insulation will protect, not harm, the historic fabric.</p>
                 <h2>AeroGel</h2>
