@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Prepares an Amp orb for this static site. There is no build step or
+# package manager: the site is plain HTML/CSS/JS served as-is (GitHub Pages).
+# Agents need Python 3 to serve a local preview (.amp/services.yaml) and
+# ImageMagick to inspect and optimize images. Both ship with the orb base
+# image, so on a normal run this script only checks for them.
+set -euo pipefail
+
+missing=()
+command -v python3 >/dev/null || missing+=(python3)
+command -v magick >/dev/null || command -v convert >/dev/null || missing+=(imagemagick)
+
+if ((${#missing[@]})); then
+  echo "Installing: ${missing[*]}"
+  time {
+    sudo apt-get update -qq
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq "${missing[@]}"
+  }
+else
+  echo "python3 and ImageMagick already present; nothing to install."
+fi
