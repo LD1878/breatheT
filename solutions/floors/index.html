@@ -77,8 +77,8 @@
             <div class="container">
                 <div class="guide-head">
                     <p class="eyebrow">Interactive layer guide</p>
-                    <h1 id="floor-title">The vapour-open insulated floor finish.</h1>
-                    <p>The insulating mineral underbase of the floor system.</p>
+                    <h1 id="floor-title">Explore every layer</h1>
+                    <p>Each component has a job in plain English, then the numbers. Select a layer on the diagram to see thickness, lambda, Sd and guide price.</p>
                 </div>
                 <div class="guide" data-view="floor">
                     <div class="guide-controls">
@@ -98,7 +98,7 @@
                                 <span class="hex hex-cyan"></span>
                                 <span class="build-name">PerliMat</span>
                             </button>
-                            <button type="button" class="build-layer" data-id="F2" style="--grow: 18">
+                            <button type="button" class="build-layer is-on" data-id="F2" style="--grow: 18">
                                 <span class="hex hex-amber"></span>
                                 <span class="build-name">PerliBase</span>
                             </button>
@@ -123,16 +123,26 @@
                                 <small>Above</small>
                             </div>
                         </div>
-                        <article class="spec-card">
-            
-            <p class="spec-job">The insulating mineral underbase of the floor system.</p>
-            <dl class="spec-grid">
-                <div><dt>Thickness</dt><dd>75mm – 200mm</dd></div>
-                <div><dt>Lambda</dt><dd>0.045 W/m·K</dd></div>
-                <div><dt>Sd</dt><dd>0.3 – 0.6 m</dd></div>
-            </dl>
-            <p class="spec-price"><span>Guide price · ex. VAT · supply only</span> <strong>£59.25 /m²</strong></p>
-        </article>
+                        <article class="spec-card" id="layerCard" aria-live="polite">
+                            <p class="spec-kicker">Selected layer</p>
+                            <h3 id="lcTitle">PerliBase</h3>
+                            <p class="spec-job" id="lcDesc">The insulating mineral underbase of the floor system.</p>
+                            <dl class="spec-grid">
+                                <div>
+                                    <dt>Thickness</dt>
+                                    <dd id="lcThick">75mm – 200mm</dd>
+                                </div>
+                                <div>
+                                    <dt>Lambda</dt>
+                                    <dd id="lcLambda">0.045 W/m·K</dd>
+                                </div>
+                                <div>
+                                    <dt>Sd</dt>
+                                    <dd id="lcSd">0.3 – 0.6 m</dd>
+                                </div>
+                            </dl>
+                            <p class="spec-price"><span>Guide price · ex. VAT · supply only</span> <strong id="lcPrice">£59.25 /m²</strong></p>
+                        </article>
                     </div>
                 </div>
         <div class="route-list">
