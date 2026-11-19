@@ -202,6 +202,12 @@
 
   const faqToggle = qs('#faqToggle');
   const faqMore = qs('#faq-more');
+  if (faqMore && location.hash === '#faq-wta') {
+    faqMore.hidden = false;
+    faqToggle?.setAttribute('aria-expanded', 'true');
+    if (faqToggle) faqToggle.textContent = 'Fewer questions';
+    document.getElementById('faq-wta')?.scrollIntoView();
+  }
   faqToggle?.addEventListener('click', () => {
     const open = faqMore.hasAttribute('hidden');
     if (open) {

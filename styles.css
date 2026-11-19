@@ -358,7 +358,9 @@ body.inner-page #main-nav { position: fixed; left: 0; right: 0; }
   font-weight: 500;
   color: var(--ink-soft);
   letter-spacing: 0.01em;
+  padding: 8px 0;
 }
+body.page-contact .nav-links .btn-nav { display: none; }
 .nav-links a:hover { color: var(--ink); }
 .nav-links .btn { color: var(--white); padding: 10px 18px; min-height: 40px; font-size: 0.8rem; }
 .hamburger {
@@ -421,7 +423,11 @@ body.inner-page #main-nav { position: fixed; left: 0; right: 0; }
   margin: 0.85rem 0 0;
   max-width: 42ch;
 }
-.hero-sub + .hero-sub { margin-top: 0.65rem; }
+.hero-sub + .hero-sub { margin-top: 0.75rem; }
+.hero-panel .eyebrow { white-space: nowrap; }
+@media (max-width: 1180px) {
+  .hero-panel .eyebrow { white-space: normal; }
+}
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.35rem; }
 .stat-lockup {
   display: flex;
@@ -928,8 +934,9 @@ cite span {
 }
 .team-people {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 28px;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
 }
 .team-people img {
   width: 100%;
@@ -1345,7 +1352,12 @@ textarea.form-input { resize: vertical; min-height: 96px; }
   min-height: 44px;
 }
 .quiz-option:hover, .quiz-option:focus-visible { border-color: var(--blue); }
-.quiz-option.is-picked { border-color: var(--blue); background: var(--blue-soft); }
+.quiz-option.is-picked,
+.quiz-option[aria-pressed="true"] {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  box-shadow: inset 3px 0 0 var(--blue);
+}
 .quiz-hint { font-size: 0.875rem; color: var(--ink-soft); margin-bottom: 12px; }
 .quiz-check { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--ink-soft); margin: 16px 0 20px; }
 .quiz-check input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; }
@@ -1658,3 +1670,106 @@ a.tab { display: inline-block; }
 .team-tease .hex { margin-bottom: 0.9rem; }
 .team-tease h2 { margin-bottom: 0.65rem; }
 .team-tease .text-link { margin-top: 1.15rem; }
+
+/* Next-step row. Replaces the old route-list of other pages' headings. */
+.next-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 1.6rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+.next-steps a { font-weight: 600; }
+
+.topics { display: grid; margin-top: 8px; }
+.topics li {
+  padding: 16px 0;
+  border-top: 1px solid var(--charcoal-line);
+}
+.topics h2 {
+  font-size: 1.35rem;
+  color: var(--paper);
+  margin: 0 0 0.35rem;
+}
+.topics p { color: rgba(247, 244, 238, 0.72); margin: 0; max-width: 62ch; }
+.band-charcoal .topics time {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 238, 0.45);
+  margin-bottom: 6px;
+}
+
+.project-hero {
+  position: relative;
+  min-height: 68vh;
+  display: flex;
+  align-items: flex-end;
+  background: var(--charcoal);
+  color: var(--paper);
+}
+.project-hero-media {
+  position: absolute;
+  inset: 0;
+}
+.project-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.project-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 27, 23, 0.15) 20%, rgba(28, 27, 23, 0.78) 100%);
+}
+.project-hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 4.5rem 0 2.75rem;
+  max-width: 40rem;
+}
+.project-hero .eyebrow { color: var(--paper); }
+.project-hero h1 { color: var(--paper); }
+.project-hero .image-caption { color: rgba(247, 244, 238, 0.78); max-width: 46ch; }
+
+.metric-band {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 22px 0;
+}
+.metric-row strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.metric-row span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.88rem;
+  color: var(--ink-mute);
+}
+.prose-band .container { max-width: 42rem; }
+.prose-band + .prose-band { padding-top: 0; }
+.layer-picks { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 1rem; }
+.layer-picks a { font-weight: 600; }
+.quote-note { font-size: 0.85rem; color: var(--ink-mute); margin-top: 0.8rem; }
+
+@media (max-width: 800px) {
+  .metric-row { grid-template-columns: 1fr; gap: 16px; }
+  .project-hero { min-height: 52vh; }
+}
+@media (max-width: 768px) {
+  .footer-brand .footer-blurb { display: none; }
+}
