@@ -1594,6 +1594,35 @@ a.tab { display: inline-block; }
 .sys-extra strong { font-family: var(--serif); color: var(--ink); margin-right: 6px; }
 .sys-extra:hover { background: var(--white); }
 .sys-note { margin-top: 1.8rem; font-size: 0.85rem; color: var(--ink-mute); }
+/* Product page: same stacks, current layer marked */
+.sys-place {
+  margin: 1.75rem 0 0.4rem;
+  max-width: 38rem;
+}
+.sys-place h2 { margin-bottom: 0.45rem; }
+.sys-grid-place { margin-top: 1.1rem; }
+.sys-here {
+  background: var(--white);
+  box-shadow: inset 3px 0 0 var(--blue);
+}
+.sys-here .sys-name { color: var(--blue); }
+.sys-here::after { content: none; }
+.sys-here .sys-mark {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  white-space: nowrap;
+}
+.sys-extra.is-here {
+  background: var(--white);
+  border-style: solid;
+  border-color: var(--blue);
+  box-shadow: inset 3px 0 0 var(--blue);
+}
+.sys-extra.is-here strong { color: var(--blue); }
 @media (max-width: 1080px) {
   .sys-grid { grid-template-columns: 1fr; gap: 48px; }
 }
@@ -1602,6 +1631,7 @@ a.tab { display: inline-block; }
   .sys-layer::after { display: none; }
   .sys-name { font-size: 1.1rem; }
   .sys-cap { padding: 10px 16px; }
+  .sys-here .sys-mark { display: none; }
 }
 .case-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin: 1rem 0; }
 .band-charcoal .metrics li { color: var(--paper); }
