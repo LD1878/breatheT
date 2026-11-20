@@ -16,9 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=wiw">
 </head>
 
 <body class="inner-page">
@@ -80,115 +80,145 @@
         <a href="tel:01285407088">01285 407088</a>
     </nav>
 
-    <main class="page-main" id="main">
-        <div class="container">
-            <h1>Will It Work On My House?</h1>
-            <p>Seven quick questions. A plain-English answer. No product names until you want them.</p>
-
-            <div id="quiz">
-                <p class="quiz-progress" id="quizProgress">1 of 7</p>
-                <a href="../" class="quiz-back" id="quizBack" hidden>Back</a>
-
-                <div class="quiz-screen is-on" data-screen="0" data-type="single">
-                    <h2>What kind of building is it?</h2>
-                    <button type="button" class="quiz-option">Victorian or Edwardian terrace</button>
-                    <button type="button" class="quiz-option">Georgian townhouse</button>
-                    <button type="button" class="quiz-option">Cotswold or other stone cottage</button>
-                    <button type="button" class="quiz-option">Timber frame, cob or daub</button>
-                    <button type="button" class="quiz-option">Mansion block or flat in an older building</button>
-                    <button type="button" class="quiz-option">Barn conversion</button>
-                    <button type="button" class="quiz-option">Not sure, it's old and the walls are solid</button>
+    <main id="main">
+        <section class="band wiw">
+            <div class="container wiw-layout">
+                <div class="wiw-intro">
+                    <p class="eyebrow">Free house check</p>
+                    <h1>Will it work on my house?</h1>
+                    <p>Seven quick questions about your building. You get a plain-English answer, and no product names until you want them.</p>
+                    <ul class="wiw-points">
+                        <li><span class="hex hex-cyan"></span>Takes about two minutes</li>
+                        <li><span class="hex hex-cyan"></span>Written for solid-wall, listed and period homes</li>
+                        <li><span class="hex hex-cyan"></span>A free survey confirms the build-up</li>
+                    </ul>
+                    <figure class="wiw-photo">
+                        <img src="../assets/images/period-houses-street.jpg" alt="A street of period houses with solid walls">
+                    </figure>
                 </div>
 
-                <div class="quiz-screen" data-screen="1" data-type="single">
-                    <h2>Is it listed, in a conservation area, or neither?</h2>
-                    <button type="button" class="quiz-option">Listed, Grade I or II*</button>
-                    <button type="button" class="quiz-option">Listed, Grade II</button>
-                    <button type="button" class="quiz-option">Conservation area</button>
-                    <button type="button" class="quiz-option">Neither</button>
-                    <button type="button" class="quiz-option">Not sure</button>
-                </div>
+                <div id="quiz" class="wiw-card">
+                    <div class="quiz-top">
+                        <a href="#" class="quiz-back" id="quizBack" hidden>← Back</a>
+                        <p class="quiz-progress" id="quizProgress">Question 1 of 7</p>
+                    </div>
+                    <div class="quiz-bar" aria-hidden="true"><span id="quizBar"></span></div>
 
-                <div class="quiz-screen" data-screen="2" data-type="single">
-                    <h2>How big is the job likely to be?</h2>
-                    <button type="button" class="quiz-option">One room</button>
-                    <button type="button" class="quiz-option">A few rooms</button>
-                    <button type="button" class="quiz-option">Whole ground floor</button>
-                    <button type="button" class="quiz-option">Whole house</button>
-                    <button type="button" class="quiz-option">A wing, block or several units</button>
-                </div>
-
-                <div class="quiz-screen" data-screen="3" data-type="multi">
-                    <h2>Which problem is loudest right now?</h2>
-                    <p class="quiz-hint">Pick up to two.</p>
-                    <button type="button" class="quiz-option" aria-pressed="false">Rooms cold even with the heating on</button>
-                    <button type="button" class="quiz-option" aria-pressed="false">Damp, mould or a musty smell</button>
-                    <button type="button" class="quiz-option" aria-pressed="false">Condensation on walls or windows</button>
-                    <button type="button" class="quiz-option" aria-pressed="false">The heating bills</button>
-                    <button type="button" class="quiz-option" aria-pressed="false">Renovating anyway and want to do it once</button>
-                    <button type="button" class="quiz-option" aria-pressed="false">A conservation officer or planning worry</button>
-                    <button type="button" class="btn btn-primary" id="quizMultiNext" disabled>Continue</button>
-                </div>
-
-                <div class="quiz-screen" data-screen="4" data-type="single">
-                    <h2>What's on the walls now?</h2>
-                    <button type="button" class="quiz-option">Lime plaster</button>
-                    <button type="button" class="quiz-option">Modern plaster or plasterboard</button>
-                    <button type="button" class="quiz-option">Bare stone or brick</button>
-                    <button type="button" class="quiz-option">Timber panelling</button>
-                    <button type="button" class="quiz-option">Not sure</button>
-                </div>
-
-                <div class="quiz-screen" data-screen="5" data-type="single">
-                    <h2>What's the floor?</h2>
-                    <button type="button" class="quiz-option">Suspended timber</button>
-                    <button type="button" class="quiz-option">Solid concrete or screed</button>
-                    <button type="button" class="quiz-option">Flagstones on earth</button>
-                    <button type="button" class="quiz-option">Mixed or not sure</button>
-                    <button type="button" class="quiz-option">Only interested in walls</button>
-                </div>
-
-                <div class="quiz-screen" data-screen="6" data-type="single">
-                    <h2>Who's asking?</h2>
-                    <button type="button" class="quiz-option">I own or live in the house</button>
-                    <button type="button" class="quiz-option">I'm an architect, surveyor or conservation officer</button>
-                    <button type="button" class="quiz-option">I'm a builder or installer</button>
-                </div>
-
-                <div class="quiz-screen" data-screen="7" data-type="capture">
-                    <h2>Nearly there. Where shall we send your answer?</h2>
-                    <form class="lead-form" id="quizCapture" data-lead-form data-form-name="Will it work — quiz answers" data-fallback-link="result/" data-fallback-label="See your answer anyway" data-fallback-auto="false" novalidate>
-                        <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-                        <input type="hidden" name="answers" id="quizAnswers" value="">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="q-name">First name</label>
-                                <input class="form-input" id="q-name" name="first-name" type="text" required autocomplete="given-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="q-email">Email</label>
-                                <input class="form-input" id="q-email" name="email" type="email" required autocomplete="email">
-                            </div>
+                    <div class="quiz-screen is-on" data-screen="0" data-type="single">
+                        <h2>What kind of building is it?</h2>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option">Victorian or Edwardian terrace</button>
+                            <button type="button" class="quiz-option">Georgian townhouse</button>
+                            <button type="button" class="quiz-option">Cotswold or other stone cottage</button>
+                            <button type="button" class="quiz-option">Timber frame, cob or daub</button>
+                            <button type="button" class="quiz-option">Mansion block or flat in an older building</button>
+                            <button type="button" class="quiz-option">Barn conversion</button>
+                            <button type="button" class="quiz-option">Not sure, it’s old and the walls are solid</button>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="q-phone">Phone (optional)</label>
-                                <input class="form-input" id="q-phone" name="phone" type="tel" autocomplete="tel">
-                            </div>
-                            <div class="form-group">
-                                <label for="q-postcode">Postcode (first half)</label>
-                                <input class="form-input" id="q-postcode" name="postcode" type="text" autocomplete="postal-code">
-                            </div>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="1" data-type="single">
+                        <h2>Is it listed, in a conservation area, or neither?</h2>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option">Listed, Grade I or II*</button>
+                            <button type="button" class="quiz-option">Listed, Grade II</button>
+                            <button type="button" class="quiz-option">Conservation area</button>
+                            <button type="button" class="quiz-option">Neither</button>
+                            <button type="button" class="quiz-option">Not sure</button>
                         </div>
-                        <label class="quiz-check">
-                            <input type="checkbox" id="q-consent" name="consent" required>
-                            <span>Yes, you can contact me about my house. No newsletter unless I ask.</span>
-                        </label>
-                        <button type="submit" class="btn btn-terra btn-arrow">Continue</button>
-                    </form>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="2" data-type="single">
+                        <h2>How big is the job likely to be?</h2>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option">One room</button>
+                            <button type="button" class="quiz-option">A few rooms</button>
+                            <button type="button" class="quiz-option">Whole ground floor</button>
+                            <button type="button" class="quiz-option">Whole house</button>
+                            <button type="button" class="quiz-option">A wing, block or several units</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="3" data-type="multi">
+                        <h2>Which problem is loudest right now?</h2>
+                        <p class="quiz-hint">Pick up to two.</p>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option" aria-pressed="false">Rooms cold even with the heating on</button>
+                            <button type="button" class="quiz-option" aria-pressed="false">Damp, mould or a musty smell</button>
+                            <button type="button" class="quiz-option" aria-pressed="false">Condensation on walls or windows</button>
+                            <button type="button" class="quiz-option" aria-pressed="false">The heating bills</button>
+                            <button type="button" class="quiz-option" aria-pressed="false">Renovating anyway and want to do it once</button>
+                            <button type="button" class="quiz-option" aria-pressed="false">A conservation officer or planning worry</button>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="quizMultiNext" disabled>Continue</button>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="4" data-type="single">
+                        <h2>What’s on the walls now?</h2>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option">Lime plaster</button>
+                            <button type="button" class="quiz-option">Modern plaster or plasterboard</button>
+                            <button type="button" class="quiz-option">Bare stone or brick</button>
+                            <button type="button" class="quiz-option">Timber panelling</button>
+                            <button type="button" class="quiz-option">Not sure</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="5" data-type="single">
+                        <h2>What’s the floor?</h2>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option">Suspended timber</button>
+                            <button type="button" class="quiz-option">Solid concrete or screed</button>
+                            <button type="button" class="quiz-option">Flagstones on earth</button>
+                            <button type="button" class="quiz-option">Mixed or not sure</button>
+                            <button type="button" class="quiz-option">Only interested in walls</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="6" data-type="single">
+                        <h2>Who’s asking?</h2>
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-option">I own or live in the house</button>
+                            <button type="button" class="quiz-option">I’m an architect, surveyor or conservation officer</button>
+                            <button type="button" class="quiz-option">I’m a builder or installer</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-screen" data-screen="7" data-type="capture">
+                        <h2>Nearly there. Where shall we send your answer?</h2>
+                        <form class="lead-form" id="quizCapture" data-lead-form data-form-name="Will it work — quiz answers" data-fallback-link="result/" data-fallback-label="See your answer anyway" data-fallback-auto="false" novalidate>
+                            <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="answers" id="quizAnswers" value="">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="q-name">First name</label>
+                                    <input class="form-input" id="q-name" name="first-name" type="text" required autocomplete="given-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="q-email">Email</label>
+                                    <input class="form-input" id="q-email" name="email" type="email" required autocomplete="email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="q-phone">Phone (optional)</label>
+                                    <input class="form-input" id="q-phone" name="phone" type="tel" autocomplete="tel">
+                                </div>
+                                <div class="form-group">
+                                    <label for="q-postcode">Postcode (first half)</label>
+                                    <input class="form-input" id="q-postcode" name="postcode" type="text" autocomplete="postal-code">
+                                </div>
+                            </div>
+                            <label class="quiz-check">
+                                <input type="checkbox" id="q-consent" name="consent" required>
+                                <span>Yes, you can contact me about my house. No newsletter unless I ask.</span>
+                            </label>
+                            <button type="submit" class="btn btn-terra btn-arrow">Continue</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <script src="../main.js"></script>
@@ -198,7 +228,9 @@
             var progress = document.getElementById('quizProgress');
             var back = document.getElementById('quizBack');
             var multiNext = document.getElementById('quizMultiNext');
+            var bar = document.getElementById('quizBar');
             var i = 0;
+            bar.style.width = (1 / 8 * 100) + '%';
 
             function show(n) {
                 i = n;
@@ -206,7 +238,8 @@
                     s.classList.toggle('is-on', idx === i);
                 });
                 var qNum = Math.min(i + 1, 7);
-                progress.textContent = (i < 7 ? qNum + ' of 7' : 'Nearly there');
+                progress.textContent = (i < 7 ? 'Question ' + qNum + ' of 7' : 'Last step');
+                bar.style.width = ((i + 1) / 8 * 100) + '%';
                 progress.hidden = false;
                 back.hidden = i === 0;
                 back.href = '#';

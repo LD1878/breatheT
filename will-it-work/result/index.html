@@ -17,9 +17,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles.css?v=wiw">
 </head>
 
 <body class="inner-page">
@@ -81,58 +81,63 @@
         <a href="tel:01285407088">01285 407088</a>
     </nav>
 
-    <main class="page-main" id="main">
-        <div class="container">
-            <span class="tag">Diagnosis</span>
-            <h1>Will it work on my house?</h1>
-            <p>Your solid brick walls have no cavity, so in winter the inside face gets cold enough for the moisture in the room to condense on it. That's the damp and the mould. The modern plaster on top is probably stopping the wall drying out.</p>
+    <main id="main">
+        <section class="band wiw">
+            <div class="container wiw-result">
+                <p class="eyebrow">Your answer</p>
+                <h1>Here’s what’s likely going on.</h1>
+                <p class="wiw-lede">Your solid brick walls have no cavity, so in winter the inside face gets cold enough for the moisture in the room to condense on it. That’s the damp and the mould. The modern plaster on top is probably stopping the wall drying out.</p>
 
-            <h2>Recommended: Breathable internal lining for solid brick</h2>
-            <p>A thin lime-and-perlite render applied to the brick after the existing plaster is taken back. It warms the inside surface so condensation stops forming, and it lets the wall breathe. Typically 25 to 50mm.</p>
-
-            <h2>What you'd notice</h2>
-            <ul class="modal-list">
-                <li>Wall warm to the touch, not clammy</li>
-                <li>Mould stops coming back</li>
-                <li>The room heats faster and holds it</li>
-            </ul>
-
-            <h2>A house like yours</h2>
-            <div class="case-card" style="max-width: 420px;">
-                <div class="case-img">
-                    <img class="case-hero" src="../../assets/images/cheltenham-bedroom-upper-park-street.jpg" alt="Bare brick bedroom with a retained lath ceiling, Upper Park Street, Cheltenham, before the breathable lining">
-                    <div class="case-tag">Historic Property · Cheltenham</div>
+                <div class="wiw-card wiw-rec">
+                    <p class="wiw-rec-tag"><span class="hex hex-cyan"></span>Recommended</p>
+                    <h2>A breathable internal lining for solid brick</h2>
+                    <p>A thin lime-and-perlite render applied to the brick after the existing plaster is taken back. It warms the inside surface so condensation stops forming, and it lets the wall breathe. Typically 25 to 50mm.</p>
+                    <h3>What you’d notice</h3>
+                    <ul class="wiw-notice">
+                        <li>The wall feels warm to the touch, not clammy</li>
+                        <li>Mould stops coming back</li>
+                        <li>The room heats up faster and holds the heat</li>
+                    </ul>
+                    <details class="faq-item wiw-buildup">
+                        <summary>See the build-up</summary>
+                        <div class="faq-body">
+                            <!-- layer descriptions to be confirmed by BreatheTherm -->
+                            <ul class="build-up-list">
+                                <li><strong>PerliScratch</strong>: base coat that grips bare brick and evens the wall</li>
+                                <li><strong>PerliTherm</strong>: the insulating lime-perlite render, 25 to 50mm</li>
+                                <li><strong>PerliFinish</strong>: breathable finishing plaster you decorate onto</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
-                <div class="case-body">
-                    <p class="image-caption">Bare brick bedroom wall, Cheltenham, before the breathable lining went on.</p>
-                    <h3>Bedroom Renovation, Upper Park Street</h3>
-                    <p>A bare-brick bedroom under a retained lath ceiling, lined with 25mm of breathable insulation. Walls lost 46% less heat, the ceiling 38% less.</p>
-                    <div class="case-metrics">
-                        <span class="case-metric-pill">Walls: −46%</span>
-                        <span class="case-metric-pill">Ceiling: −38%</span>
-                        <span class="case-metric-pill">PerliTherm: 25mm</span>
+
+                <h2 class="wiw-sub">A house like yours</h2>
+                <article class="wiw-case">
+                    <img src="../../assets/images/cheltenham-bedroom-upper-park-street.jpg" alt="Bare brick bedroom with a retained lath ceiling, Upper Park Street, Cheltenham, before the breathable lining">
+                    <div class="wiw-case-body">
+                        <p class="wiw-case-place">Historic property · Cheltenham</p>
+                        <h3>Bedroom renovation, Upper Park Street</h3>
+                        <p>A bare-brick bedroom under a retained lath ceiling, lined with 25mm of breathable insulation. The walls lost 46% less heat, the ceiling 38% less.</p>
+                        <ul class="wiw-stats">
+                            <li><strong>−46%</strong>Wall heat loss</li>
+                            <li><strong>−38%</strong>Ceiling heat loss</li>
+                            <li><strong>25mm</strong>PerliTherm</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <div class="wiw-next">
+                    <div>
+                        <h2>Want us to check it properly?</h2>
+                        <p>This guide points you in the right direction. A survey confirms the build-up and checks the moisture risk.</p>
+                    </div>
+                    <div class="wiw-next-actions">
+                        <a href="../../contact/" class="btn btn-primary btn-arrow">Book a free assessment</a>
+                        <a class="text-link" href="../../for-architects/#technical-pack">Architects: request the technical pack</a>
                     </div>
                 </div>
             </div>
-
-            <details class="faq-item" style="margin-top: 32px;">
-                <summary class="faq-summary">See the build-up <span class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9" /></svg></span></summary>
-                <div class="faq-body">
-                    <!-- layer descriptions to be confirmed by BreatheTherm -->
-                    <ul class="build-up-list">
-                        <li><strong>PerliScratch</strong>: base coat that grips bare brick and evens the wall</li>
-                        <li><strong>PerliTherm</strong>: the insulating lime-perlite render, 25 to 50mm</li>
-                        <li><strong>PerliFinish</strong>: breathable finishing plaster you decorate onto</li>
-                    </ul>
-                </div>
-            </details>
-
-            <div class="hero-ctas" style="margin-top: 32px;">
-                <a href="../../contact/" class="btn btn-terra btn-arrow">Book a free assessment</a>
-            </div>
-            <p><a href="../../for-architects/#technical-pack">Architects: request the technical pack</a></p>
-            <p class="image-caption">This guide points you in the right direction. A survey confirms the build-up and checks moisture risk.</p>
-        </div>
+        </section>
     </main>
     <script src="../../main.js"></script>
 </body>
