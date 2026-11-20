@@ -598,6 +598,23 @@
       if (e.target === overlay) closeAllModals();
     })
   );
+  const journey = qs('[data-journey]');
+  if (journey) {
+    const steps = qsa('.journey-step', journey);
+    const bar = qs('.journey-bar span', journey);
+    const btns = qsa('.journey-nav button', journey);
+    let step = 0;
+    const showStep = (n) => {
+      step = Math.max(0, Math.min(steps.length - 1, n));
+      steps.forEach((s, i) => s.classList.toggle('is-on', i === step));
+      bar.style.width = ((step + 1) / steps.length * 100) + '%';
+      btns[0].disabled = step === 0;
+      btns[1].disabled = step === steps.length - 1;
+    };
+    btns.forEach((b) => b.addEventListener('click', () => showStep(step + Number(b.dataset.dir))));
+    showStep(0);
+  }
+
   const quotes = qs('.quotes');
   if (quotes) {
     const btns = qsa('.quotes-btn');
