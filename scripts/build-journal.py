@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "content" / "journal"
 GUIDES = ROOT / "guides"
 SITE = "https://www.breathetherm.co.uk"
-CSS_VER = "journal4"
+CSS_VER = "journal5"
 
 
 NAV_LINKS = """\

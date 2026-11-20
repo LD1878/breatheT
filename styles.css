@@ -2822,11 +2822,13 @@ a.tab { display: inline-block; }
   font-size: 1.02rem;
 }
 .journal-figure {
-  margin: 1.8rem 0 2rem;
+  margin: 0.85rem 0 1.5rem;
+  max-width: 32rem;
 }
 .journal-figure img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
+  max-height: 18rem;
   object-fit: cover;
   border-radius: 2px;
   box-shadow: inset 0 0 0 1px rgba(46, 196, 204, 0.28);
@@ -2996,7 +2998,7 @@ a.tab { display: inline-block; }
 }
 .journal-feature-card {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.4fr minmax(12rem, 18rem);
   gap: 28px;
   align-items: center;
   margin-bottom: 12px;
@@ -3005,7 +3007,8 @@ a.tab { display: inline-block; }
 }
 .journal-feature-card img {
   width: 100%;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 4 / 3;
+  max-height: 14rem;
   object-fit: cover;
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(46, 196, 204, 0.35);
