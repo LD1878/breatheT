@@ -576,6 +576,54 @@
       if (e.target === overlay) closeAllModals();
     })
   );
+  const quotes = qs('.quotes');
+  if (quotes) {
+    const btns = qsa('.quotes-btn');
+    const updateQuoteBtns = () => {
+      btns[0].disabled = quotes.scrollLeft <= 2;
+      btns[1].disabled = quotes.scrollLeft + quotes.clientWidth >= quotes.scrollWidth - 2;
+    };
+    btns.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const step = qs('.quote', quotes).offsetWidth + parseFloat(getComputedStyle(quotes).columnGap);
+        quotes.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+      })
+    );
+    quotes.addEventListener('scroll', updateQuoteBtns, { passive: true });
+    window.addEventListener('resize', updateQuoteBtns);
+    updateQuoteBtns();
+  }
+
+  const glQ = qs('#gl-q');
+  if (glQ) {
+    let glCat = '';
+    const filterGlossary = () => {
+      const q = glQ.value.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp(`(^|[^a-z])${q}`, 'i');
+      let any = false;
+      qsa('.gl-letter').forEach((sec) => {
+        let shown = 0;
+        qsa('.gl-card', sec).forEach((card) => {
+          const ok = (!glCat || card.dataset.cat === glCat) && (!q || re.test(card.textContent));
+          card.hidden = !ok;
+          if (ok) shown++;
+        });
+        sec.hidden = !shown;
+        qs(`.gl-az a[href="#${sec.id}"]`)?.classList.toggle('is-off', !shown);
+        if (shown) any = true;
+      });
+      qs('#gl-empty').hidden = any;
+    };
+    glQ.addEventListener('input', filterGlossary);
+    qsa('.gl-cat').forEach((btn) =>
+      btn.addEventListener('click', () => {
+        glCat = btn.dataset.cat;
+        qsa('.gl-cat').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        filterGlossary();
+      })
+    );
+  }
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeAllModals();
