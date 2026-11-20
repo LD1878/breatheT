@@ -1684,6 +1684,16 @@ a.tab { display: inline-block; }
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
+}
+.teaser-card > a:first-child { display: block; }
+.teaser-body .proof-place {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0 0 0.35rem;
 }
 .teaser-body {
   padding: 22px 22px 24px;
