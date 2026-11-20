@@ -48,6 +48,28 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
   qsa('.reveal').forEach((el) => revealObs.observe(el));
 
+  const jumpLinks = qsa('.case-jump a');
+  if (jumpLinks.length) {
+    const jumpObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        jumpLinks.forEach((a) => {
+          if (a.hash === '#' + e.target.id) {
+            a.setAttribute('aria-current', 'true');
+            const bar = a.parentElement;
+            bar.scrollLeft = a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2;
+          } else {
+            a.removeAttribute('aria-current');
+          }
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    jumpLinks.forEach((a) => {
+      const target = qs(a.hash);
+      if (target) jumpObs.observe(target);
+    });
+  }
+
   requestAnimationFrame(() => {
     qsa('.reveal-hero').forEach((el, i) => {
       setTimeout(() => el.classList.add('visible'), 80 + i * 70);
