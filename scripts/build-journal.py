@@ -9,6 +9,8 @@ from __future__ import annotations
 import html
 import json
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -857,27 +859,14 @@ def render_index(posts: list[dict]) -> str:
     )
 
 
-def update_sitemap(posts: list[dict]) -> None:
-    path = ROOT / "sitemap.xml"
-    text = path.read_text()
-    text = re.sub(
-        r"  <url><loc>https://www\.breathetherm\.co\.uk/guides/[^<]*</loc>(?:<lastmod>[^<]+</lastmod>)?</url>\n",
-        "",
-        text,
+def update_sitemap(_posts: list[dict] | None = None) -> None:
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "build-sitemap.py")],
+        cwd=ROOT,
+        check=False,
     )
-    latest = max(p["updated"] for p in posts)
-    block = (
-        f"  <url><loc>{SITE}/guides/</loc><lastmod>{latest}</lastmod></url>\n"
-        + "".join(
-            f"  <url><loc>{SITE}/guides/{p['slug']}/</loc>"
-            f"<lastmod>{p['updated']}</lastmod></url>\n"
-            for p in posts
-        )
-    )
-    marker = "  <url><loc>https://www.breathetherm.co.uk/display/</loc></url>\n"
-    if marker not in text:
-        raise SystemExit("sitemap is missing the /display/ URL used as an insert marker")
-    path.write_text(text.replace(marker, marker + block, 1))
+    if result.returncode:
+        raise SystemExit("sitemap generator failed")
 
 
 def check_em_dashes(posts: list[dict]) -> None:
@@ -905,7 +894,6 @@ def main() -> None:
     (GUIDES / "index.html").write_text(render_index(posts))
     print("wrote guides/index.html")
     update_sitemap(posts)
-    print("updated sitemap.xml")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,66 @@
+# BreatheTherm
+
+> Breathable mineral insulation for pre-1919 and listed buildings in the UK. Vapour-open lime, perlite and aerogel systems that keep solid walls drying while the home stays warm.
+
+BreatheTherm specifies and installs vapour-open wall and floor build-ups for solid masonry. Materials are mineral and designed for listed and conservation work, including WTA 6-4 internal insulation. Contact: hello@breathetherm.co.uk, 01285 407088. The Old Forge, Todenham, Gloucestershire GL56 9PF.
+
+Canonical pages: https://www.breathetherm.co.uk/sitemap.xml
+
+## Start here
+
+- [Breathable insulation for solid-wall homes](https://www.breathetherm.co.uk/): Vapour-open mineral insulation for pre-1919 buildings. Cut heating bills without degrading your heritage property. Walls and floors that breathe.
+- [Will it work on my house?](https://www.breathetherm.co.uk/will-it-work/): Seven quick questions. A plain-English answer. No product names until you want them.
+- [Book a breathable insulation assessment](https://www.breathetherm.co.uk/contact/): Speak to a heritage retrofit specialist. No obligation. Clear advice tailored to your building type, age, and any conservation requirements.
+
+## Solutions
+
+- [Breathable insulation for solid walls](https://www.breathetherm.co.uk/solutions/): Pre-1919 buildings were designed to breathe. Lime mortar, solid brick and stone absorb and release moisture as part of a natural cycle.
+- [Insulating heritage listed period properties](https://www.breathetherm.co.uk/solutions/internal-walls/): Breathable internal thermal upgrade to bare brick walls and a retained lath ceiling using PerliScratch, AeroBond, mesh, and PerliTherm.
+- [Breathable insulation and external walls](https://www.breathetherm.co.uk/solutions/external-walls/): External wall insulation on a period facade needs planning, and often listed building consent. Most BreatheTherm work is internal, so the street elevation stays as it is.
+- [Breathable floor insulation](https://www.breathetherm.co.uk/solutions/floors/): The insulating mineral underbase of the floor system. A vapour-open separator beneath the floor build-up.
+- [Breathable insulation demo house](https://www.breathetherm.co.uk/display/): Click a zone on the model to explore the build-up.
+
+## Products
+
+- [Breathable insulation products](https://www.breathetherm.co.uk/products/): Every BreatheTherm product in its place: the breathable wall and floor build-ups, layer by layer, with typical thickness and lambda.
+- [PerliTherm thermal render for solid stone walls](https://www.breathetherm.co.uk/products/perlitherm/): PerliTherm perlite render. Expanded perlite bound with hydraulic lime. Thermal render for solid stone walls.
+- [Breathable aerogel insulation UK](https://www.breathetherm.co.uk/products/gelpanel/): An ultra-thin thermal boost where reveals and junctions are tight. Aerogel insulation UK.
+- [Breathable PerliScratch sealing coat](https://www.breathetherm.co.uk/products/perliscatch/): A keyed lime-perlite coat so the insulation can grip the masonry.
+- [Mesh in the breathable wall lining](https://www.breathetherm.co.uk/products/perlimessh/): PerliScratch, AeroBond, mesh, and PerliTherm.
+- [Breathable AeroBond adhesive](https://www.breathetherm.co.uk/products/aerobond/): Adhesive and basecoat in one, for aerogel and mineral layers.
+- [Breathable PerliFinish finish coat](https://www.breathetherm.co.uk/products/perlifinish/): A breathable lime finish, ready for decoration.
+- [PerliBase floor insulation](https://www.breathetherm.co.uk/products/perlibase/): The insulating mineral underbase of the floor system.
+- [PerliStruct floor slab](https://www.breathetherm.co.uk/products/perlistruct/): A structural lime-perlite screed that still lets vapour through.
+- [PerliScreed screed layer](https://www.breathetherm.co.uk/products/perlilay/): The vapour-open insulated floor finish.
+- [Breathable PerliMat geotextile](https://www.breathetherm.co.uk/products/perlimat/): A vapour-open separator beneath the floor build-up.
+
+## Journal
+
+- [Breathable insulation journal](https://www.breathetherm.co.uk/guides/): Why vapour-open build-ups matter in solid masonry, and what breathable actually means on a pre-1919 wall.
+- [Walls that are allowed to dry](https://www.breathetherm.co.uk/guides/walls-that-are-allowed-to-dry/): Why breathable insulation matters in traditional buildings. Vapour-open lime and perlite keep solid walls drying while they get warmer in use.
+- [Internal insulation and listed building consent](https://www.breathetherm.co.uk/guides/internal-insulation-listed-building-consent/): Internal wall insulation on a listed building almost always needs consent. Thin vapour-open systems protect plaster, panelling and room proportions.
+- [U-values without trapping moisture](https://www.breathetherm.co.uk/guides/u-values-without-trapping-moisture/): Finding the balance between internal insulation and breathability. More thickness is not always safer on a solid wall that still has to dry.
+- [What WTA 6-4 asks of a system](https://www.breathetherm.co.uk/guides/what-wta-6-4-asks-of-a-system/): WTA 6-4 is the German guideline for internal insulation of historic walls. It judges the whole build-up, not a single material U-value on site.
+- [Reading a wall before specifying thickness](https://www.breathetherm.co.uk/guides/reading-a-wall-before-specifying-thickness/): Every successful solid-wall retrofit starts with the building. Survey masonry, plaster, pointing, moisture and junctions before anyone chooses millimetres.
+
+## Projects
+
+- [Breathable insulation projects](https://www.breathetherm.co.uk/projects/): Every project is different. Every outcome is the same: a warmer, drier, healthier building that retains its heritage character.
+- [Grade I Cotswold farmhouse insulation](https://www.breathetherm.co.uk/projects/kerry-cottage/): Grade I Cotswold farmhouse. Solid stone, cob and lime, lined internally. U-value 0.22, bills down 52%, elevation unchanged.
+- [Kerry Cottage, Perthshire: sandstone wall and floor insulation](https://www.breathetherm.co.uk/projects/kerry-cottage-perthshire/): Kerry Cottage, Perthshire. 450 mm sandstone walls lined internally and a new insulated floor: 77 m² of wall, 65 m² of floor, wall U-value down 76%.
+- [Did this Bristol block stay dry?](https://www.breathetherm.co.uk/projects/bristol-mansion-block/): Twelve flats, every external wall lined, sensors left in the walls. Zero moisture failures at 36 months. Bills down 71%.
+
+## Who it is for
+
+- [Breathable insulation for homeowners](https://www.breathetherm.co.uk/for-homeowners/): Reduce energy bills and eliminate damp without compromising the character or fabric of the construction.
+- [Breathable insulation for architects](https://www.breathetherm.co.uk/for-architects/): Full technical support from design stage to site sign-off and LPA approval.
+- [Breathable insulation for installers](https://www.breathetherm.co.uk/for-installers/): Join the approved installer network and tap into the UK's 5.9 million pre-1919 buildings waiting to be retrofitted properly. First in your area.
+
+## Company
+
+- [About this breathable insulation team](https://www.breathetherm.co.uk/about/): Two practitioners who watched conventional insulation fail in period houses, then built the system they needed.
+- [Glossary of breathable retrofit terms](https://www.breathetherm.co.uk/glossary/): Plain-English definitions of breathable insulation, damp and heritage retrofit terms, from aerogel and hydraulic lime to Sd values and U-values.
+
+## Optional
+
+- [How do you use the details I send?](https://www.breathetherm.co.uk/privacy/): How Breathe Therm Ltd uses the name, email, phone and postcode you send with an enquiry.

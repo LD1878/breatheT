@@ -1,6 +1,6 @@
 # Journal post format
 
-Every new journal entry is one Markdown file in this folder. Required front matter first, then the article in a fixed heading order. Run `python3 scripts/build-journal.py` from the repo root. It writes `/guides/<slug>/index.html`, rebuilds `/guides/index.html`, and adds the new URLs to `sitemap.xml`.
+Every new journal entry is one Markdown file in this folder. Required front matter first, then the article in a fixed heading order. Run `python3 scripts/build-journal.py` from the repo root. It writes `/guides/<slug>/index.html`, rebuilds `/guides/index.html`, then regenerates `sitemap.xml` and `llms.txt`.
 
 Do not use em dashes or en dashes. Use a comma, a colon, a period, or "to".
 
